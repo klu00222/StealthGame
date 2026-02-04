@@ -6,7 +6,7 @@
             "id": "09f19d17-80e9-4cc5-948c-aa360b39e22c",
             "actions": [
                 {
-                    "name": "JumpStarted",
+                    "name": "SaveScore",
                     "type": "Button",
                     "id": "cefa4c87-af9c-4fa9-8cb1-d7c19c9a2314",
                     "expectedControlType": "",
@@ -32,7 +32,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "JumpStarted",
+                    "action": "SaveScore",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -48,7 +48,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
+                    "name": "Up",
                     "id": "d39f7f7b-fbfd-49e5-b719-89411e94d548",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
@@ -59,7 +59,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "down",
+                    "name": "Down",
                     "id": "2ae933c2-8e06-49ae-ad05-224adf8674e6",
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
@@ -70,7 +70,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "left",
+                    "name": "Left",
                     "id": "812d1241-e2b0-49fb-b240-901f0c6157d9",
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
@@ -81,8 +81,8 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "right",
-                    "id": "59a93940-8258-4079-a341-863e9c2cde74",
+                    "name": "Right",
+                    "id": "fbbf7c5a-8f35-4624-925e-35e96980b3c1",
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",

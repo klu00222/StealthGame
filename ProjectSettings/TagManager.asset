@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
-  - Roof
+  - Player
+  - Walls
   - 
   - 
   - 
@@ -38,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 580747973
+    locked: 0
+  - name: Wall
+    uniqueID: 644901991
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
