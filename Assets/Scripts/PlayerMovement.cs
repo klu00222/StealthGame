@@ -1,38 +1,44 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private float Speed = 5.0f;
 
-    Rigidbody2D rigidbody;
-    private bool isMoving;
 
+    private Rigidbody2D rb;
+    private SpriteRenderer spriteRenderer;
     private int score = 2000;
 
-    public bool IsMoving => isMoving;
+    public bool IsMoving { get; private set; }
 
-    void Start()
+    private void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void OnMove(InputValue value)
     {
         // Read value from control, the type depends on what
         // type of controls the action is bound to
-        var moveDir = value.Get<Vector2>();
+        Vector2 moveDir = value.Get<Vector2>();
 
         Vector2 velocity = moveDir * Speed;
-        rigidbody.linearVelocity = velocity;
+        rb.linearVelocity = velocity;
 
-        isMoving = (velocity.magnitude > 0.01f);
+        IsMoving = velocity.magnitude > 0.01f;
 
-        if (isMoving)
+        if (moveDir.x > 0.1f)
         {
-            float angle = Mathf.Atan2(moveDir.y, moveDir.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle);
+            spriteRenderer.flipX = false; 
+        }
+        else if (moveDir.x < -0.1f)
+        {
+            spriteRenderer.flipX = true; 
         }
     }
 
