@@ -7191,13 +7191,151 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3982978846393950434
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 670128119313536962, guid: 5f85813695db0874b8168df01cbba630,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 670128119313536962, guid: 5f85813695db0874b8168df01cbba630,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 670128119313536962, guid: 5f85813695db0874b8168df01cbba630,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670128119313536962, guid: 5f85813695db0874b8168df01cbba630,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 670128119313536962, guid: 5f85813695db0874b8168df01cbba630,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670128119313536962, guid: 5f85813695db0874b8168df01cbba630,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670128119313536962, guid: 5f85813695db0874b8168df01cbba630,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670128119313536962, guid: 5f85813695db0874b8168df01cbba630,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670128119313536962, guid: 5f85813695db0874b8168df01cbba630,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670128119313536962, guid: 5f85813695db0874b8168df01cbba630,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7879970105132556624, guid: 5f85813695db0874b8168df01cbba630,
+        type: 3}
+      propertyPath: m_Name
+      value: AquamarineSlime
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5f85813695db0874b8168df01cbba630, type: 3}
+--- !u!1001 &7271909399328979799
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1462198367312780598, guid: fe17f939544e574408c61dfd04549aa5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462198367312780598, guid: fe17f939544e574408c61dfd04549aa5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462198367312780598, guid: fe17f939544e574408c61dfd04549aa5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462198367312780598, guid: fe17f939544e574408c61dfd04549aa5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462198367312780598, guid: fe17f939544e574408c61dfd04549aa5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462198367312780598, guid: fe17f939544e574408c61dfd04549aa5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462198367312780598, guid: fe17f939544e574408c61dfd04549aa5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462198367312780598, guid: fe17f939544e574408c61dfd04549aa5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462198367312780598, guid: fe17f939544e574408c61dfd04549aa5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462198367312780598, guid: fe17f939544e574408c61dfd04549aa5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7494744352691171386, guid: fe17f939544e574408c61dfd04549aa5,
+        type: 3}
+      propertyPath: m_Name
+      value: MaroonSlime
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe17f939544e574408c61dfd04549aa5, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1966528008}
-  - {fileID: 1625158040}
   - {fileID: 1671099242}
+  - {fileID: 1625158040}
   - {fileID: 1110979121}
   - {fileID: 966458083}
   - {fileID: 2041335041}
+  - {fileID: 3982978846393950434}
+  - {fileID: 7271909399328979799}

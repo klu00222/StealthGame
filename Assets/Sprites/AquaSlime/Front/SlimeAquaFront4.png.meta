@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2613226cd4aa2ea4aa2980d7beb3a1f6
+guid: 8c973a4523316b346a81c64037e0e16b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8976257925057547459
-    second: SlimeAquaFront4_0
+      213: 4924250185677252356
+    second: SlimeAquaFront5_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SlimeAquaFront4_0
+      name: SlimeAquaFront5_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 12
-        height: 9
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3cc075b4603129c70800000000000000
-      internalID: 8976257925057547459
+      spriteID: 407a17e3473765440800000000000000
+      internalID: 4924250185677252356
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SlimeAquaFront4_0: 8976257925057547459
+      SlimeAquaFront5_0: 4924250185677252356
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
