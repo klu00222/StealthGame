@@ -5,48 +5,60 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(SpriteRenderer))]
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField]
-    private float Speed = 5.0f;
-
+    [SerializeField] private float Speed = 5.0f;
+    [SerializeField] private InputActionReference moveActionReference;
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
-    private int score = 2000;
+    private Vector2 moveInput;
 
     public bool IsMoving { get; private set; }
 
-    private void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public void OnMove(InputValue value)
+    public void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + (Speed * Time.fixedDeltaTime * moveInput.normalized));
+    }
+
+    public void OnMovePerformed(InputAction.CallbackContext value)
     {
         // Read value from control, the type depends on what
         // type of controls the action is bound to
-        Vector2 moveDir = value.Get<Vector2>();
+        moveInput = value.ReadValue<Vector2>();
+        Debug.Log(moveInput);
+        IsMoving = moveInput.magnitude > 0.01f;
 
-        Vector2 velocity = moveDir * Speed;
-        rb.linearVelocity = velocity;
-
-        IsMoving = velocity.magnitude > 0.01f;
-
-        if (moveDir.x > 0.1f)
+        if (moveInput.x > 0.1f)
         {
-            spriteRenderer.flipX = false; 
+            spriteRenderer.flipX = false;
         }
-        else if (moveDir.x < -0.1f)
+        else if (moveInput.x < -0.1f)
         {
-            spriteRenderer.flipX = true; 
+            spriteRenderer.flipX = true;
         }
     }
-
-    // NOTE: InputSystem: "SaveScore" action becomes "OnSaveScore" method
-    public void OnSaveScore()
+    private void OnMoveCanceled(InputAction.CallbackContext value)
     {
-        // Usage example on how to save score
-        PlayerPrefs.SetInt("Score", score);
-        score = PlayerPrefs.GetInt("Score");
+        moveInput = Vector2.zero;
+        IsMoving = false;
+    }
+
+    public void OnEnable()
+    {
+        moveActionReference.action.Enable();
+        moveActionReference.action.performed += OnMovePerformed;
+        moveActionReference.action.canceled += OnMoveCanceled;
+    }
+
+    public void OnDisable()
+    {
+        moveActionReference.action.performed -= OnMovePerformed;
+        moveActionReference.action.canceled -= OnMoveCanceled;
+        moveActionReference.action.Disable();
     }
 }

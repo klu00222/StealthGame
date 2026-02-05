@@ -6985,6 +6985,20 @@ Transform:
   - {fileID: 992621155}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1730448944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: Player/Move
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
+  m_Asset: {fileID: -944628639613478452, guid: 54136bf61d7066f4990c3ce7a9b6d5b9, type: 3}
+  m_ActionId: 3543051c-c5e5-48dc-92f3-22d394c8adb4
 --- !u!1 &1966528005
 GameObject:
   m_ObjectHideFlags: 0
@@ -7088,7 +7102,6 @@ GameObject:
   - component: {fileID: 2041335041}
   - component: {fileID: 2041335040}
   - component: {fileID: 2041335039}
-  - component: {fileID: 2041335042}
   - component: {fileID: 2041335043}
   - component: {fileID: 2041335044}
   m_Layer: 0
@@ -7194,19 +7207,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2041335042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2041335038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 991a75c65752d5e4ea272dbab50837df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  Speed: 5
 --- !u!50 &2041335043
 Rigidbody2D:
   serializedVersion: 5
@@ -7231,9 +7231,9 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!114 &2041335044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7243,28 +7243,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2041335038}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Script: {fileID: 11500000, guid: 991a75c65752d5e4ea272dbab50837df, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
-  m_Actions: {fileID: -944628639613478452, guid: 54136bf61d7066f4990c3ce7a9b6d5b9,
-    type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: 09f19d17-80e9-4cc5-948c-aa360b39e22c
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 1966528007}
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  Speed: 5
+  moveActionReference: {fileID: 1730448944}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
