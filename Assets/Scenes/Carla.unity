@@ -119,20 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &223377220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: Player/Move
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
-  m_Asset: {fileID: -944628639613478452, guid: 54136bf61d7066f4990c3ce7a9b6d5b9, type: 3}
-  m_ActionId: 3543051c-c5e5-48dc-92f3-22d394c8adb4
 --- !u!1 &251550359
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,7 +130,8 @@ GameObject:
   - component: {fileID: 251550360}
   - component: {fileID: 251550362}
   - component: {fileID: 251550361}
-  m_Layer: 0
+  - component: {fileID: 251550363}
+  m_Layer: 3
   m_Name: GrassTilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5404,6 +5391,105 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &251550363
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251550359}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
+--- !u!1 &272173752 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7879970105132556624, guid: 5f85813695db0874b8168df01cbba630,
+    type: 3}
+  m_PrefabInstance: {fileID: 3982978846393950434}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &272173755 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 670128119313536962, guid: 5f85813695db0874b8168df01cbba630,
+    type: 3}
+  m_PrefabInstance: {fileID: 3982978846393950434}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &272173756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272173752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0826810f0f39ca848b34a3d928ab6a2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyPatrol
+  speed: 2
+  Waypoints: {fileID: 0}
+  ObstaclePoint: {fileID: 344694292}
+  Ground:
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!1 &344694291
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 344694292}
+  m_Layer: 0
+  m_Name: ObstacleDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &344694292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344694291}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.89, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 272173755}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &966458080
 GameObject:
   m_ObjectHideFlags: 0
@@ -6123,11 +6209,11 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 3, y: 5, z: 0}
+  - first: {x: 4, y: 5, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 11
-      m_TileSpriteIndex: 11
+      m_TileIndex: 10
+      m_TileSpriteIndex: 10
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -6665,9 +6751,9 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: abb39a22375df1442a8a30200a3c29d7, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 0f346d8a7cd1a6040aa5df6cc2e4d757, type: 2}
-  - m_RefCount: 4
+  - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: cffd20c9b2ca85744af30264eecf792e, type: 2}
-  - m_RefCount: 3
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 3274a038cd9e89445a6b31bf06f0b998, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: bfa9618006c0ade4d851fb2f019ac345, type: 2}
@@ -6704,9 +6790,9 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 9fa88a1625b88504ea97a796c9e98a3b, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: 8b2a0672e7d3f064b9b1c9cd0fb7eaef, type: 3}
-  - m_RefCount: 4
+  - m_RefCount: 5
     m_Data: {fileID: 21300000, guid: 7940ad85efab17a4688c50d321a37ed3, type: 3}
-  - m_RefCount: 3
+  - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: 993f8f074e0f8b340a9db4b9fb15183b, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: 3ea5a46ff321f19468897872d42b7504, type: 3}
@@ -6948,6 +7034,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110979117}
   m_CullTransparentMesh: 1
+--- !u!1 &1370099463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1370099464}
+  m_Layer: 0
+  m_Name: Watpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1370099464
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370099463}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.28, y: -5.57, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1681267491}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1401933943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1401933944}
+  m_Layer: 0
+  m_Name: Watpoint (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1401933944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401933943}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.28, y: 9.37, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1681267491}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1625158038
 GameObject:
   m_ObjectHideFlags: 0
@@ -7036,6 +7184,39 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 992621155}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1681267490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1681267491}
+  m_Layer: 0
+  m_Name: WaypointsAquaSlime
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1681267491
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681267490}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.96517, y: 2.9049, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1370099464}
+  - {fileID: 1401933944}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1966528005
@@ -7147,7 +7328,7 @@ GameObject:
   - component: {fileID: 2041335045}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7261,7 +7442,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   Speed: 5
-  moveActionReference: {fileID: 223377220}
 --- !u!50 &2041335043
 Rigidbody2D:
   serializedVersion: 5
@@ -7377,12 +7557,12 @@ PrefabInstance:
     - target: {fileID: 670128119313536962, guid: 5f85813695db0874b8168df01cbba630,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.64
+      value: 2.26
       objectReference: {fileID: 0}
     - target: {fileID: 670128119313536962, guid: 5f85813695db0874b8168df01cbba630,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.34
+      value: -3.81
       objectReference: {fileID: 0}
     - target: {fileID: 670128119313536962, guid: 5f85813695db0874b8168df01cbba630,
         type: 3}
@@ -7431,8 +7611,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 670128119313536962, guid: 5f85813695db0874b8168df01cbba630,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 344694292}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7879970105132556624, guid: 5f85813695db0874b8168df01cbba630,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 272173756}
   m_SourcePrefab: {fileID: 100100000, guid: 5f85813695db0874b8168df01cbba630, type: 3}
 --- !u!1001 &7271909399328979799
 PrefabInstance:
@@ -7514,3 +7702,4 @@ SceneRoots:
   - {fileID: 2041335041}
   - {fileID: 3982978846393950434}
   - {fileID: 7271909399328979799}
+  - {fileID: 1681267491}
