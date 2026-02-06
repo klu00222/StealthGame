@@ -19,7 +19,7 @@ public class ChaseBehaviour : StateMachineBehaviour
         animator.SetBool("Chase", playerClose);
 
         Vector2 direction = player.position - animator.transform.position;
-        animator.transform.position += (Vector3)direction.normalized * speed * Time.deltaTime;
+        animator.transform.position += speed * Time.deltaTime * (Vector3)direction.normalized;
     }
 
     private bool IsPlayerClose(Transform transform)

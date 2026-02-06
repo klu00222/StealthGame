@@ -12,7 +12,7 @@ public class PatrolBehaviour : StateMachineBehaviour
     private Vector2 startPosition;
 
     private float direction = 1.0f;
-
+    /*
     private void OnEnable()
     {
         EnemyPatrol.OnEdgeDetected += FlipCharacter;
@@ -22,6 +22,7 @@ public class PatrolBehaviour : StateMachineBehaviour
     {
         EnemyPatrol.OnEdgeDetected -= FlipCharacter;
     }
+    */
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
