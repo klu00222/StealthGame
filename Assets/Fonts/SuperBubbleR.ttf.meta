@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 152810a1ae1c1624e838628c655c9e59
+guid: 9679f9a6276f4a44ca4418aba32d8c93
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Kablammo
+  - Super Bubble
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
