@@ -21,6 +21,7 @@ public class CameraMovement : MonoBehaviour
         target.x = player.transform.position.x;
         target.y = player.transform.position.y;
 
+        //Move a percentage of the position distance every frame
         smoothedPosition = Vector3.Lerp(transform.position, target, smoothSpeed * Time.deltaTime);
         transform.position = smoothedPosition;
     }
