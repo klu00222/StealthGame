@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -12,12 +13,17 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Vector2 moveInput;
 
-    public bool IsMoving { get; private set; }
+    public static event Action<Vector2> OnMoveInput;
+
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+    private void Update()
+    {
+        OnMoveInput?.Invoke(moveInput);
     }
 
     public void FixedUpdate()
@@ -30,22 +36,10 @@ public class PlayerMovement : MonoBehaviour
         // Read value from control, the type depends on what
         // type of controls the action is bound to
         moveInput = value.ReadValue<Vector2>();
-        Debug.Log(moveInput);
-        IsMoving = moveInput.magnitude > 0.01f;
-
-        if (moveInput.x > 0.1f)
-        {
-            spriteRenderer.flipX = false;
-        }
-        else if (moveInput.x < -0.1f)
-        {
-            spriteRenderer.flipX = true;
-        }
     }
     private void OnMoveCanceled(InputAction.CallbackContext value)
     {
         moveInput = Vector2.zero;
-        IsMoving = false;
     }
 
     public void OnEnable()
