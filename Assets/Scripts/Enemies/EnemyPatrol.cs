@@ -6,50 +6,54 @@ using UnityEngine;
 public class EnemyPatrol : MonoBehaviour
 {
     public float speed = 2.0f;
-    public Transform Waypoints;
+    public float time = 2.0f;
+    public Transform WaypointsParent;
+    public bool loopWaypoints = true;
 
-    public Transform ObstaclePoint;
-    public LayerMask Ground;
+    private Transform[] waypoints;
+    private int currentIndex;
+    private bool waiting;
 
-    public static event Action OnEdgeDetected;
+    private void Start()
+    {
+        waypoints = new Transform[WaypointsParent.childCount];
 
-    private bool collided;
-    private bool coolDown;
+        for (int i = 0; i < WaypointsParent.childCount; i++)
+        {
+            waypoints[i] = WaypointsParent.GetChild(i);
+        }
+    }
 
     private void Update()
     {
-        if ((EdgeDetected() || collided) && !coolDown)
-        {
-            Debug.Log("Edge detected");
-            OnEdgeDetected?.Invoke();
+        if (waiting) return;
+        MoveToWaypoint();
+    }
 
-            collided = false;
-            StartCoroutine(CoolDown());
+    private void MoveToWaypoint()
+    {
+        Transform target = waypoints[currentIndex];
+        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+
+        if (Vector2.Distance(transform.position, target.position) < 0.1f)
+        {
+            StartCoroutine(WaitAtWayPoint());
+        }
+    }
+
+    IEnumerator WaitAtWayPoint()
+    {
+        waiting = true;
+        yield return new WaitForSeconds(time);
+
+        if (loopWaypoints)
+        {
+            currentIndex = (currentIndex + 1) % waypoints.Length;
+        } else
+        {
+            Math.Min(currentIndex + 1, waypoints.Length - 1);
         }
 
-    }
-
-    private bool EdgeDetected()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(ObstaclePoint.position, Vector2.up, 1.5f, Ground);
-
-        if (hit.collider != null)
-        {
-            hit = Physics2D.Raycast(ObstaclePoint.position, Vector2.down, 1.5f, Ground);
-        }
-
-        return (hit.collider == null);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        collided = true;
-    }
-
-    private IEnumerator CoolDown()
-    {
-        coolDown = false;
-        yield return new WaitForSeconds(0.5f);
-        coolDown = true;
+        waiting = false;
     }
 }
