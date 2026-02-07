@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyChase : MonoBehaviour
 {
@@ -37,5 +38,10 @@ public class EnemyChase : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, player.position);
         return (distance < visionRange);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        SceneManager.LoadScene("Ending");
     }
 }
