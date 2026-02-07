@@ -5612,7 +5612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a74156193bd4a545924a4dd180f5d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  DistanceText: {fileID: 1387560425}
+  distanceText: {fileID: 0}
 --- !u!1 &835186255
 GameObject:
   m_ObjectHideFlags: 0
@@ -7718,7 +7718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a74156193bd4a545924a4dd180f5d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DistanceCounter
-  DistanceText: {fileID: 1387560425}
+  distanceText: {fileID: 1387560425}
 --- !u!1001 &934229370671462825
 PrefabInstance:
   m_ObjectHideFlags: 0
