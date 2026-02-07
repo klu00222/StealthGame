@@ -11,6 +11,9 @@ public class PlayerAnimation : MonoBehaviour
     private readonly int inputX = Animator.StringToHash("InputX");
     private readonly int inputY = Animator.StringToHash("InputY");
 
+    private readonly int lastX = Animator.StringToHash("LastX");
+    private readonly int lastY = Animator.StringToHash("LastY");
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -34,12 +37,15 @@ public class PlayerAnimation : MonoBehaviour
         {
             animator.SetBool(walking, true);
             lastMoveDirection = movement;
+
             animator.SetFloat(inputX, movement.x);
             animator.SetFloat(inputY, movement.y);
         }
         else
         {
             animator.SetBool(walking, false);
+            animator.SetFloat(lastX, lastMoveDirection.x);
+            animator.SetFloat(lastY, lastMoveDirection.y);
         }
     }
 }
