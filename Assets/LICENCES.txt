@@ -3,7 +3,7 @@ Clock and Flag assets
 CC BY-NC
 https://creativecommons.org/licenses/by-nc/4.0/
 Assets by: Alexia Martínez
------------------------------------------------
+---------------------------------------------------------------------------------------------
 
 04Font:
 
@@ -12,9 +12,9 @@ Copyright (C) 1998 - 2001
 Yuji Oshimoto. 
 All rights Reserved. 
 http://www.04.JP.ORG/04Q.Org
------------------------------------------------
+---------------------------------------------------------------------------------------------
 
-Background Elements Redux
+Background Elements Redux and Exit Sign
 
 Created/distributed by Kenney (www.kenney.nl)
 Creation date: 26-02-2019
@@ -36,9 +36,60 @@ Support us by crediting Kenney or www.kenney.nl (this is not mandatory)
 	Follow on Twitter for updates:
 	http://twitter.com/KenneyNL
 
-------------------------------------------------
+---------------------------------------------------------------------------------------------
 
 Supper Bubble Font
 
 License: Freeware
 link: https://www.fontspace.com/super-bubble-font-f100606
+
+---------------------------------------------------------------------------------------------
+
+Slime sprites by Faultbox:
+
+You are free to:
+Share — copy and redistribute the material in any medium or format for any purpose, even commercially.
+Adapt — remix, transform, and build upon the material for any purpose, even commercially.
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+Under the following terms:
+Attribution — You make changes to these assets for both commercial and non commercial projects. If changes are made credit is appreciated but not required. 
+No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+Notices:
+No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
+
+---------------------------------------------------------------------------------------------
+
+Tilemap by Cup Nooble:
+
+
+ >>> License - Basic Pack
+
+ ----------
+
+ - You can modify the assets. 
+
+ [ Feel free to get creative and make your own sprites in this style or use them as reference for your own ]
+ [ Making additional sprites in the same style or using them as reference for your own project is also allowed ]
+ 
+ ----------
+
+ - You can use these assets in any kind of non-commercial projects. 
+
+ [ Except anything to do with NFTs or AI training is not allowed ]
+
+ ----------
+
+ - You can not redistribute the asset pack itself or resell it on other platforms, even if it is slightly modified.
+
+ [ Of course, you can redistribute your own projects made with these assets like games, software, or other ]
+ [ Making your project opensource is also allowed ]
+ [ For open source projects include a note that says some or all assets are made by Cup Nooble together with the licensing terms ]
+
+ ----------
+
+ - Credit is required : (Cup Nooble) 
+
+ [ Credit example : Assets -From : Sprout Lands -By : Cup Nooble ]
+ [ If you share your game on itch.io a link to the Asset Packs page would be very appreciated ]
+ [ But feel free to credit in whatever way fits your project best ]
+ [ Thanks a lot for reading ^^ ]

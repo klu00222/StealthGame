@@ -1,16 +1,16 @@
 using System;
 using System.Collections;
-using System.Threading;
 using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
     public float speed = 2.0f;
     public float time = 2.0f;
+
     public Transform WaypointsParent;
+    private Transform[] waypoints;
     public bool loopWaypoints = true;
 
-    private Transform[] waypoints;
     private int currentIndex;
     private bool waiting;
 

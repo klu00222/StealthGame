@@ -8,6 +8,7 @@ public class PlayerAnimation : MonoBehaviour
 
     //String to hash to not read strings so often
     private readonly int walking = Animator.StringToHash("Walking");
+
     private readonly int inputX = Animator.StringToHash("InputX");
     private readonly int inputY = Animator.StringToHash("InputY");
 
@@ -30,7 +31,6 @@ public class PlayerAnimation : MonoBehaviour
 
     private void HandleAnimationUpdate(Vector2 movement)
     {
-        Debug.Log(movement);
         bool isMoving = movement.sqrMagnitude > 0;
 
         if (isMoving)

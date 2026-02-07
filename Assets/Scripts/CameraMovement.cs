@@ -8,12 +8,13 @@ public class CameraMovement : MonoBehaviour
     [SerializeField]
     private Transform player;
 
-    [SerializeField][Range(1f, 5f)] private float smoothSpeed;
+    [SerializeField]
+    [Range(1f, 5f)]
+    private float smoothSpeed;
 
     private void Start()
     {
         target = new Vector3(player.transform.position.x, player.transform.position.y, -10);
-
     }
 
     private void Update()

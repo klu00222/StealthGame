@@ -3,26 +3,24 @@ using UnityEngine;
 
 public class DistanceCounter : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI DistanceText;
-    Vector3 Position;
-    float DistanceTravelled;
+    [SerializeField]
+    private TextMeshProUGUI distanceText;
 
+    private Vector3 position;
+    private float distanceTravelled;
 
     private void Start()
     {
-        Position = transform.position;
+        position = transform.position;
     }
 
     void Update()
     {
-        float Distance = Vector3.Distance(transform.position, Position);
+        float distance = Vector3.Distance(transform.position, position);
 
-        DistanceTravelled += Distance;
+        distanceTravelled += distance;
+        position = transform.position;
 
-        Position = transform.position;
-
-        DistanceText.text = DistanceTravelled.ToString("F0") + " m";
-
-        Debug.Log(transform.position);
+        distanceText.text = distanceTravelled.ToString("F0") + " m";
     }
 }

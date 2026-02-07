@@ -3,14 +3,18 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI TimerText;
-    float ElapsedTime;
+    [SerializeField]
+    private TextMeshProUGUI TimerText;
+
+    private float elapsedTime;
 
     void Update()
     {
-        ElapsedTime += Time.deltaTime;
-        int minutes = Mathf.FloorToInt(ElapsedTime / 60);
-        int seconds = Mathf.FloorToInt(ElapsedTime % 60);
+        elapsedTime += Time.deltaTime;
+
+        int minutes = Mathf.FloorToInt(elapsedTime / 60);
+        int seconds = Mathf.FloorToInt(elapsedTime % 60);
+
         TimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }

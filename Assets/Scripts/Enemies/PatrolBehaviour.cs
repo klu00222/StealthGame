@@ -12,17 +12,6 @@ public class PatrolBehaviour : StateMachineBehaviour
     private Vector2 startPosition;
 
     private float direction = 1.0f;
-    /*
-    private void OnEnable()
-    {
-        EnemyPatrol.OnEdgeDetected += FlipCharacter;
-    }
-
-    private void OnDisable()
-    {
-        EnemyPatrol.OnEdgeDetected -= FlipCharacter;
-    }
-    */
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -42,14 +31,11 @@ public class PatrolBehaviour : StateMachineBehaviour
         animator.SetBool("Patrol", !timeUp);
 
         animator.transform.position = Vector2.Lerp(startPosition, targetPosition, timer / StayTime);
-
-        Debug.Log(targetPosition + ", " + direction);
     }
 
     private Vector2 GetTargetPosition()
     {
         targetPosition = new Vector2(startPosition.x, startPosition.y + Random.Range(0.5f, 4.0f) * direction);
-
         return new Vector2(0, 1);
     }
 
@@ -63,12 +49,5 @@ public class PatrolBehaviour : StateMachineBehaviour
     {
         timer += Time.deltaTime;
         return (timer > StayTime);
-    }
-
-    private void FlipCharacter()
-    {
-        direction *= -1;
-        timer = 0.0f;
-        targetPosition = GetTargetPosition();
     }
 }

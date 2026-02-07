@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,7 +7,6 @@ public class EnemyChase : MonoBehaviour
 
     [SerializeField]
     private float visionRange = 4.0f;
-
     [SerializeField]
     private float speed = 2.0f;
 
@@ -28,7 +26,8 @@ public class EnemyChase : MonoBehaviour
 
             Vector2 direction = player.position - transform.position;
             transform.position += speed * Time.deltaTime * (Vector3)direction.normalized;
-        } else
+        }
+        else
         {
             animator.SetBool("Patrol", true);
         }
