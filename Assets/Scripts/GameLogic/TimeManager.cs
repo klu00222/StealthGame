@@ -27,6 +27,13 @@ public class TimeManager : MonoBehaviour
 
     public void ShowBestTimeText(TextMeshProUGUI BestTimeText)
     {
+
+        if (BestTime == float.MaxValue)
+        {
+            BestTimeText.text = "Best time is: --:--";
+            return;
+        }
+
         int minutes = Mathf.FloorToInt(BestTime / 60);
         int seconds = Mathf.FloorToInt(BestTime % 60);
 
