@@ -8400,6 +8400,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5772726785871945652, guid: fe17f939544e574408c61dfd04549aa5,
+        type: 3}
+      propertyPath: WaypointsParent
+      value: 
+      objectReference: {fileID: 114414008}
     - target: {fileID: 7494744352691171386, guid: fe17f939544e574408c61dfd04549aa5,
         type: 3}
       propertyPath: m_Name
