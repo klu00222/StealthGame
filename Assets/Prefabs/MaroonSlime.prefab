@@ -252,7 +252,7 @@ MonoBehaviour:
   visionRange: 4
   speed: 2
   spriteGameObject: {fileID: 7886636676983940031}
-  animator: {fileID: 0}
+  animator: {fileID: 2551404037438137908}
 --- !u!58 &5535580033695242150
 CircleCollider2D:
   m_ObjectHideFlags: 0
