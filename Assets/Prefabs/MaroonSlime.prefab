@@ -209,9 +209,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1462198367312780598}
   - component: {fileID: 7425520585445985452}
+  - component: {fileID: 5772726785871945652}
   - component: {fileID: 5535580033695242150}
   - component: {fileID: 4951288086937748955}
-  - component: {fileID: 5772726785871945652}
+  - component: {fileID: 1635975810574666437}
   m_Layer: 0
   m_Name: MaroonSlime
   m_TagString: Untagged
@@ -250,9 +251,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyChase
   visionRange: 4
-  speed: 2
+  speed: 4
   spriteGameObject: {fileID: 7886636676983940031}
-  animator: {fileID: 2551404037438137908}
+--- !u!114 &5772726785871945652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7494744352691171386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0826810f0f39ca848b34a3d928ab6a2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyPatrol
+  speed: 2
+  time: 2
+  loopWaypoints: 1
+  WaypointsParent: {fileID: 0}
 --- !u!58 &5535580033695242150
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -316,19 +332,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5772726785871945652
-MonoBehaviour:
+--- !u!95 &1635975810574666437
+Animator:
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7494744352691171386}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0826810f0f39ca848b34a3d928ab6a2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyPatrol
-  speed: 2
-  time: 2
-  WaypointsParent: {fileID: 0}
-  loopWaypoints: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dddb31acd03402e41931e346dcb6289e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
