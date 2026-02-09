@@ -31,6 +31,60 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1462198367312780598}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2899265019541202766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7427007531750095892}
+  - component: {fileID: 4682180491848613727}
+  m_Layer: 0
+  m_Name: EnemyCone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7427007531750095892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2899265019541202766}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.7, y: 0.4000001, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1462198367312780598}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4682180491848613727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2899265019541202766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c34ee192beea70478e6ea11c6a39f2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VisionDetector
+  Player:
+    serializedVersion: 2
+    m_Bits: 256
+  Visible:
+    serializedVersion: 2
+    m_Bits: 512
+  detectionRange: 2.39
+  visionAngle: 78.19
+  visionMaterial: {fileID: 2100000, guid: 02d7ceac507e0364483b3c188ce2bfdf, type: 2}
+  visionResolution: 30
 --- !u!1 &7494744352691171386
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,7 +96,9 @@ GameObject:
   - component: {fileID: 1462198367312780598}
   - component: {fileID: 9176220294507462668}
   - component: {fileID: 4070397960581477237}
-  - component: {fileID: 4922540028187275040}
+  - component: {fileID: 7425520585445985452}
+  - component: {fileID: 104238124215154922}
+  - component: {fileID: 5535580033695242150}
   m_Layer: 0
   m_Name: MaroonSlime
   m_TagString: Untagged
@@ -64,6 +120,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3593497212405286104}
+  - {fileID: 7427007531750095892}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9176220294507462668
@@ -147,7 +204,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4922540028187275040
+--- !u!114 &7425520585445985452
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,14 +213,62 @@ MonoBehaviour:
   m_GameObject: {fileID: 7494744352691171386}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c34ee192beea70478e6ea11c6a39f2f, type: 3}
+  m_Script: {fileID: 11500000, guid: bcf1591305c814b4db59bbb77493bebe, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VisionDetector
-  Player:
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyChase
+  visionRange: 4
+  speed: 2
+  animator: {fileID: 4070397960581477237}
+--- !u!114 &104238124215154922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7494744352691171386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59665a6bb930fa44982c7f71120219ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyFreeMovement
+  speed: 2
+  HitDetection: {fileID: 1462198367312780598}
+  Obstacles:
     serializedVersion: 2
-    m_Bits: 256
-  Visible:
+    m_Bits: 512
+--- !u!58 &5535580033695242150
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7494744352691171386}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  detectionRange: 2.2
-  visionAngle: 45
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.4375

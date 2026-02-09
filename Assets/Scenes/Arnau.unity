@@ -5790,92 +5790,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683288046}
   m_CullTransparentMesh: 1
---- !u!1 &706020172 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7494744352691171386, guid: fe17f939544e574408c61dfd04549aa5,
-    type: 3}
-  m_PrefabInstance: {fileID: 7271909399328979799}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &706020174 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4070397960581477237, guid: fe17f939544e574408c61dfd04549aa5,
-    type: 3}
-  m_PrefabInstance: {fileID: 7271909399328979799}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &706020176 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1462198367312780598, guid: fe17f939544e574408c61dfd04549aa5,
-    type: 3}
-  m_PrefabInstance: {fileID: 7271909399328979799}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &706020178
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 706020172}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.4375
---- !u!114 &706020179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 706020172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcf1591305c814b4db59bbb77493bebe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyChase
-  visionRange: 4
-  speed: 2
-  animator: {fileID: 706020174}
---- !u!114 &706020180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 706020172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59665a6bb930fa44982c7f71120219ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyFreeMovement
-  speed: 2
-  HitDetection: {fileID: 706020176}
-  Obstacles:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &966458080
 GameObject:
   m_ObjectHideFlags: 0
@@ -6118,7 +6032,7 @@ GameObject:
   - component: {fileID: 992621158}
   m_Layer: 0
   m_Name: FencesTilemap
-  m_TagString: Untagged
+  m_TagString: Walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8384,11 +8298,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AquamarineSlime
       objectReference: {fileID: 0}
-    - target: {fileID: 7879970105132556624, guid: 5f85813695db0874b8168df01cbba630,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8460,19 +8369,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7494744352691171386, guid: fe17f939544e574408c61dfd04549aa5,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 706020178}
-    - targetCorrespondingSourceObject: {fileID: 7494744352691171386, guid: fe17f939544e574408c61dfd04549aa5,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 706020179}
-    - targetCorrespondingSourceObject: {fileID: 7494744352691171386, guid: fe17f939544e574408c61dfd04549aa5,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 706020180}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe17f939544e574408c61dfd04549aa5, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -8485,8 +8382,8 @@ SceneRoots:
   - {fileID: 966458083}
   - {fileID: 934229370671462825}
   - {fileID: 3982978846393950434}
-  - {fileID: 114414008}
   - {fileID: 7271909399328979799}
+  - {fileID: 114414008}
   - {fileID: 581835956}
   - {fileID: 2091919059}
   - {fileID: 1227856878}
