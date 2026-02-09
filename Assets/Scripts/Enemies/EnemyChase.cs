@@ -9,6 +9,8 @@ public class EnemyChase : MonoBehaviour
     private float visionRange = 4.0f;
     [SerializeField]
     private float speed = 2.0f;
+    [SerializeField] private Transform spriteGameObject;
+
 
     public Animator animator;
 
@@ -24,8 +26,16 @@ public class EnemyChase : MonoBehaviour
         {
             animator.SetBool("isPatrolling", false);
 
-            Vector2 direction = player.position - transform.position;
-            transform.position += speed * Time.deltaTime * (Vector3)direction.normalized;
+            Vector3 direction = player.position - transform.position;
+
+            // Rotate enemy toward player
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, 0f, angle);
+            spriteGameObject.rotation = Quaternion.identity;
+
+            // Move toward player
+            transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+
         }
         else
         {
