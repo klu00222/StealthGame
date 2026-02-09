@@ -5,7 +5,7 @@ public class BestTimeTextUI : MonoBehaviour
 {
     [SerializeField] public TextMeshProUGUI BestTimeText;
 
-    void Start()
+    public void Start()
     {
         TimeManager.Instance.ShowBestTimeText(BestTimeText);
     }
