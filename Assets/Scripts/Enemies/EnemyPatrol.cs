@@ -14,6 +14,12 @@ public class EnemyPatrol : MonoBehaviour
     private int currentIndex;
     private bool waiting;
 
+    private Rigidbody2D rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     private void Start()
     {
         waypoints = new Transform[WaypointsParent.childCount];
@@ -24,24 +30,30 @@ public class EnemyPatrol : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (waiting) return;
+        if (waiting)
+        {
+            return;
+        }
+
         MoveToWaypoint();
     }
 
     private void MoveToWaypoint()
     {
         Transform target = waypoints[currentIndex];
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        Vector2 newPosition = Vector2.MoveTowards(transform.position, target.position, speed * Time.fixedDeltaTime);
 
-        if (Vector2.Distance(transform.position, target.position) < 0.1f)
+        rb.MovePosition(newPosition);
+
+        if (Vector2.Distance(rb.position, target.position) < 0.1f)
         {
-            StartCoroutine(WaitAtWayPoint());
+            _ = StartCoroutine(WaitAtWayPoint());
         }
     }
 
-    IEnumerator WaitAtWayPoint()
+    private IEnumerator WaitAtWayPoint()
     {
         waiting = true;
         yield return new WaitForSeconds(time);
@@ -49,9 +61,10 @@ public class EnemyPatrol : MonoBehaviour
         if (loopWaypoints)
         {
             currentIndex = (currentIndex + 1) % waypoints.Length;
-        } else
+        }
+        else
         {
-            Math.Min(currentIndex + 1, waypoints.Length - 1);
+            _ = Math.Min(currentIndex + 1, waypoints.Length - 1);
         }
 
         waiting = false;
