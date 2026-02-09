@@ -19,14 +19,15 @@ public class VisionDetector : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, detectionRange);
 
         Gizmos.color = Color.red;
-        var direction = Quaternion.AngleAxis(visionAngle / 2, transform.forward) * transform.right;
+        Vector3 direction = Quaternion.AngleAxis(visionAngle / 2, transform.forward) * transform.right;
         Gizmos.DrawRay(transform.position, direction * detectionRange);
 
-        var direction2 = Quaternion.AngleAxis(-visionAngle / 2, transform.forward) * transform.right;
+        Vector3 direction2 = Quaternion.AngleAxis(-visionAngle / 2, transform.forward) * transform.right;
         Gizmos.DrawRay(transform.position, direction2 * detectionRange);
 
         Gizmos.color = Color.white;
     }
+
 
     private void Update()
     {
@@ -45,7 +46,7 @@ public class VisionDetector : MonoBehaviour
         {
             if (PlayerInAngle(ref players))
             {
-                PlayerIsVisible(ref players);
+                _ = PlayerIsVisible(ref players);
             }
         }
 
@@ -61,7 +62,7 @@ public class VisionDetector : MonoBehaviour
         {
             res = true;
 
-            foreach (var player in playerColliders)
+            foreach (Collider2D player in playerColliders)
             {
                 players.Add(player.transform);
             }
@@ -82,7 +83,7 @@ public class VisionDetector : MonoBehaviour
             }
         }
 
-        return (players.Count > 0);
+        return players.Count > 0;
     }
 
     private float GetAngle(Transform target)
@@ -101,11 +102,11 @@ public class VisionDetector : MonoBehaviour
 
             if (!isVisible)
             {
-                players.Remove(players[i]);
+                _ = players.Remove(players[i]);
             }
         }
 
-        return (players.Count > 0);
+        return players.Count > 0;
     }
 
     private bool IsVisible(Transform target)

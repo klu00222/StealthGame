@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyFreeMovement : MonoBehaviour
 {
     [SerializeField]
     private float speed = 2.0f;

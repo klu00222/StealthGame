@@ -22,21 +22,21 @@ public class EnemyChase : MonoBehaviour
     {
         if (IsPlayerClose())
         {
-            animator.SetBool("Patrol", false);
+            animator.SetBool("isPatrolling", false);
 
             Vector2 direction = player.position - transform.position;
             transform.position += speed * Time.deltaTime * (Vector3)direction.normalized;
         }
         else
         {
-            animator.SetBool("Patrol", true);
+            animator.SetBool("isPatrolling", true);
         }
     }
 
     private bool IsPlayerClose()
     {
         float distance = Vector3.Distance(transform.position, player.position);
-        return (distance < visionRange);
+        return distance < visionRange;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
