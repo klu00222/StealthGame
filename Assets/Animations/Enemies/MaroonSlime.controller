@@ -41,8 +41,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1efc3271e12a5cf4dbebb190ab8abd1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatrolBehaviour
-  StayTime: 3
-  VisionRange: 4
+  stayTime: 3
   speed: 2
   obstacleDistance: 0.2
   Obstacles:
@@ -110,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad173ac3af9243e4b9719bb1ec0fc739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IdleBehaviour
-  StayTime: 2
+  stayTime: 3
 --- !u!1101 &-3829261813345148092
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -237,7 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChaseBehaviour
   speed: 4
-  VisionRange: 4
+  visionRange: 4
 --- !u!1107 &5636169065413767222
 AnimatorStateMachine:
   serializedVersion: 6

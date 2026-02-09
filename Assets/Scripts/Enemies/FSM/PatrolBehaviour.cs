@@ -57,6 +57,12 @@ public class PatrolBehaviour : StateMachineBehaviour
 
     private bool ObstacleDetected(Transform transform)
     {
+        if (hitDetection == null)
+        {
+            hitDetection = transform.Find("HitDetector");
+            if (hitDetection == null) return false;
+        }
+
         RaycastHit2D hit = Physics2D.Raycast(hitDetection.position, transform.right, obstacleDistance, Obstacles);
         return (hit.collider != null);
     }
