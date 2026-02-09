@@ -14,7 +14,6 @@ public class EnemyFreeMovement : MonoBehaviour
 
         if (ObstacleDetected())
         {
-            Debug.Log("Obstacle detected");
             Flip();
         }
     }
@@ -27,7 +26,7 @@ public class EnemyFreeMovement : MonoBehaviour
     private bool ObstacleDetected()
     {
         RaycastHit2D hit = Physics2D.Raycast(HitDetection.position, Vector2.right, Obstacles);
-        return (hit.collider != null);
+        return hit.collider != null;
     }
 
     private void Flip()
