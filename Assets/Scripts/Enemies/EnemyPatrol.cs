@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
-    public float speed = 2.0f;
-    public float time = 2.0f;
+    [SerializeField]
+    private float speed = 2.0f;
+    [SerializeField]
+    private float time = 2.0f;
 
+    [SerializeField]
+    private bool loopWaypoints = true;
     public Transform WaypointsParent;
     private Transform[] waypoints;
-    public bool loopWaypoints = true;
 
     private int currentIndex;
     private bool waiting;

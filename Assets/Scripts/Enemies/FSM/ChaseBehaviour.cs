@@ -4,8 +4,8 @@ public class ChaseBehaviour : StateMachineBehaviour
 {
     [SerializeField]
     private float speed = 2.0f;
-
-    public float VisionRange = 4.0f;
+    [SerializeField]
+    private float visionRange = 4.0f;
 
     private Transform player;
     private bool playerClose;
@@ -42,6 +42,6 @@ public class ChaseBehaviour : StateMachineBehaviour
     private bool IsPlayerClose(Transform transform)
     {
         var dist = Vector3.Distance(transform.position, player.position);
-        return (dist < VisionRange);
+        return (dist < visionRange);
     }
 }

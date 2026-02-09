@@ -7,17 +7,22 @@ public class VisionDetector : MonoBehaviour
     public LayerMask Player;
     public LayerMask Visible;
 
-    [SerializeField] private float detectionRange;
-    [SerializeField] private float visionAngle;
+    [SerializeField]
+    private float detectionRange;
+    [SerializeField]
+    private float visionAngle;
 
     [Header("Vision Rendering")]
-    [SerializeField] private Material visionMaterial;
-    [SerializeField] private int visionResolution = 30;
+    [SerializeField]
+    private Material visionMaterial;
+    [SerializeField]
+    private int visionResolution = 30;
 
     private Mesh visionMesh;
     private MeshFilter meshFilter;
 
     public static event Action OnPlayerDetected;
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, detectionRange);
@@ -32,11 +37,8 @@ public class VisionDetector : MonoBehaviour
         Gizmos.color = Color.white;
     }
 
-
     private void Awake()
     {
-        Debug.Log($"{name} VisionDetector Awake — enabled={enabled}");
-
         meshFilter = gameObject.AddComponent<MeshFilter>();
 
         MeshRenderer renderer = gameObject.AddComponent<MeshRenderer>();
@@ -54,7 +56,6 @@ public class VisionDetector : MonoBehaviour
     {
         if (DetectPlayers().Length > 0)
         {
-            Debug.Log("Player detected");
             OnPlayerDetected?.Invoke();
         }
     }

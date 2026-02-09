@@ -9,10 +9,11 @@ public class EnemyChase : MonoBehaviour
     private float visionRange = 4.0f;
     [SerializeField]
     private float speed = 2.0f;
-    [SerializeField] private Transform spriteGameObject;
 
+    [SerializeField]
+    private Transform spriteGameObject;
 
-    public Animator animator;
+    private Animator animator;
 
     private void Start()
     {
@@ -35,7 +36,6 @@ public class EnemyChase : MonoBehaviour
 
             // Move toward player
             transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-
         }
         else
         {

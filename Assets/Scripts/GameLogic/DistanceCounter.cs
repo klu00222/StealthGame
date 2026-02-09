@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class DistanceCounter : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI distanceText;
+    [SerializeField]
+    private TextMeshProUGUI distanceText;
 
     private Vector3 position;
     private float distanceTravelled;

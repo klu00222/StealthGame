@@ -27,7 +27,6 @@ public class TimeManager : MonoBehaviour
 
     public void ShowBestTimeText(TextMeshProUGUI BestTimeText)
     {
-
         if (BestTime == float.MaxValue)
         {
             BestTimeText.text = "Best time is: --:--";
@@ -40,4 +39,3 @@ public class TimeManager : MonoBehaviour
         BestTimeText.text = "Best time is: " + string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }
-

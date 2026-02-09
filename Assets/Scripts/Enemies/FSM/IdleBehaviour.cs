@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class IdleBehaviour : StateMachineBehaviour
 {
-    public float StayTime = 3.0f;
+    [SerializeField]
+    private float stayTime = 3.0f;
 
     private Transform player;
     private float timer;
-    
-    bool playerClose;
+    private bool playerClose;
 
     private void OnEnable()
     {
@@ -37,7 +37,7 @@ public class IdleBehaviour : StateMachineBehaviour
     private bool IsTimeUp()
     {
         timer += Time.deltaTime;
-        return (timer > StayTime);
+        return (timer > stayTime);
     }
 
     private void IsPlayerClose()

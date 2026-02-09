@@ -2,9 +2,8 @@ using UnityEngine;
 
 public class PatrolBehaviour : StateMachineBehaviour
 {
-    public float StayTime = 3.0f;
-    public float VisionRange = 4.0f;
-
+    [SerializeField]
+    private float stayTime = 3.0f;
     [SerializeField]
     private float speed = 2.0f;
     [SerializeField]
@@ -13,10 +12,9 @@ public class PatrolBehaviour : StateMachineBehaviour
     private float timer;
     private Transform player;
     private Transform hitDetection;
+    private bool playerClose;
 
     public LayerMask Obstacles;
-
-    private bool playerClose;
 
     private void OnEnable()
     {
@@ -32,13 +30,9 @@ public class PatrolBehaviour : StateMachineBehaviour
     {
         timer = 0.0f;
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        playerClose = false;
 
+        playerClose = false;
         hitDetection = animator.transform.Find("HitDetector");
-        if (hitDetection == null)
-        {
-            Debug.Log("Hello");
-        }
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -52,7 +46,6 @@ public class PatrolBehaviour : StateMachineBehaviour
 
         if (ObstacleDetected(animator.transform))
         {
-            Debug.Log("Obstacle detected");
             Flip(animator.transform);
         }
     }
@@ -76,6 +69,6 @@ public class PatrolBehaviour : StateMachineBehaviour
     private bool IsTimeUp()
     {
         timer += Time.deltaTime;
-        return (timer > StayTime);
+        return (timer > stayTime);
     }
 }

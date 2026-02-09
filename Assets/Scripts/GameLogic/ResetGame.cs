@@ -8,4 +8,3 @@ public class ResetGame : MonoBehaviour
         SceneManager.LoadScene("Gameplay");
     }
 }
-

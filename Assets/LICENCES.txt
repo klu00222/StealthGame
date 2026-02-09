@@ -93,3 +93,16 @@ Tilemap by Cup Nooble:
  [ If you share your game on itch.io a link to the Asset Packs page would be very appreciated ]
  [ But feel free to credit in whatever way fits your project best ]
  [ Thanks a lot for reading ^^ ]
+ 
+ ---------------------------------------------------------------------------------------------
+ Music: Pizza Doggy’s Game Assets – License Agreement
+
+1. What You Can Do
+	- Use the assets in any game (commercial or not).
+	- Edit or modify them however you like.
+	- Want to use them in other digital media? Just ask!
+2. What You Can’t Do
+	- Don’t resell, redistribute, or share the assets on their own (even if edited).
+	- Don’t include them in asset packs, templates, or bundles.
+3. Attribution
+	Giving credit is appreciated, but not required!
