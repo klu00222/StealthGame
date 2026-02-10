@@ -2,85 +2,65 @@ using UnityEngine;
 
 public class PatrolBehaviour : StateMachineBehaviour
 {
-    [SerializeField]
-    private float stayTime = 3.0f;
-    [SerializeField]
-    private float speed = 2.0f;
-    [SerializeField]
-    private float obstacleDistance = 0.2f;
 
-    private float timer;
-    private Transform player;
-    private Transform hitDetection;
-    private bool playerClose;
-
-    public LayerMask Obstacles;
-
+    private EnemyData data;
     private static readonly int IsPatrolling = Animator.StringToHash("isPatrolling");
     private static readonly int IsChasing = Animator.StringToHash("isChasing");
 
-    private void OnEnable()
-    {
-        VisionDetector.OnPlayerDetected += IsPlayerClose;
-    }
-
-    private void OnDisable()
-    {
-        VisionDetector.OnPlayerDetected -= IsPlayerClose;
-    }
-
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        timer = 0.0f;
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-
-        playerClose = false;
-        hitDetection = animator.transform.Find("HitDetector");
+        data = animator.GetComponent<EnemyData>();
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        bool timeUp = IsTimeUp();
-
-        animator.SetBool(IsChasing, playerClose);
-        animator.SetBool(IsPatrolling, !timeUp);
-
-        animator.transform.Translate(speed * Time.deltaTime * animator.transform.right, Space.World);
-
-        if (ObstacleDetected(animator.transform))
+        if (data == null || data.waypoints.Length == 0)
         {
-            Flip(animator.transform);
+            return;
         }
-    }
 
-    private void IsPlayerClose()
-    {
-        playerClose = true;
-    }
-
-    private bool ObstacleDetected(Transform transform)
-    {
-        if (hitDetection == null)
+        if (data.CanSeePlayer())
         {
-            hitDetection = transform.Find("HitDetector");
-            if (hitDetection == null)
+            animator.SetBool(IsChasing, true);
+            return;
+        }
+
+        if (data.isWaiting)
+        {
+            data.timer += Time.deltaTime;
+            if (data.timer >= data.waitTime)
             {
-                return false;
+                data.timer = 0;
+                data.isWaiting = false;
+
+                //Modulo wrapping (cycle through waypoints)
+                data.currentIndex = (data.currentIndex + 1) % data.waypoints.Length;
             }
+            return;
         }
 
-        RaycastHit2D hit = Physics2D.Raycast(hitDetection.position, transform.right, obstacleDistance, Obstacles);
-        return hit.collider != null;
+        //Movement
+        Transform target = data.waypoints[data.currentIndex];
+        animator.transform.position = Vector2.MoveTowards(animator.transform.position, target.position, data.speed * Time.deltaTime);
+
+        //Rotation
+        Vector2 moveDirection = (target.position - animator.transform.position).normalized;
+
+        if (moveDirection != Vector2.zero)
+        {
+            float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+            Quaternion rotation = Quaternion.Euler(0, 0, angle);
+
+            animator.transform.rotation = Quaternion.Lerp(animator.transform.rotation, rotation, data.rotationSpeed * Time.deltaTime);
+        }
+
+        //Waypoint reached check
+        if (Vector2.Distance(animator.transform.position, target.position) < 0.1f)
+        {
+            data.isWaiting = true;
+        }
+
     }
 
-    private void Flip(Transform transform)
-    {
-        transform.Rotate(0, 180, 0);
-    }
 
-    private bool IsTimeUp()
-    {
-        timer += Time.deltaTime;
-        return timer > stayTime;
-    }
 }

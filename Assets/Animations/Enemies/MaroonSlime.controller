@@ -15,6 +15,7 @@ AnimatorState:
   - {fileID: 2432297021776121520}
   m_StateMachineBehaviours:
   - {fileID: -7885640278035660291}
+  - {fileID: 8883162368230126193}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -41,12 +42,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1efc3271e12a5cf4dbebb190ab8abd1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatrolBehaviour
+--- !u!114 &-7805136033629531355
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad173ac3af9243e4b9719bb1ec0fc739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IdleBehaviour
   stayTime: 3
-  speed: 2
-  obstacleDistance: 0.2
-  Obstacles:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1101 &-4526391344732561209
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -135,6 +143,18 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &-3314344177605158896
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce43fabc12822cd4ca8c9fe1a0e31b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChaseBehaviour
 --- !u!1102 &-1890115599385680597
 AnimatorState:
   serializedVersion: 6
@@ -150,6 +170,7 @@ AnimatorState:
   - {fileID: 7988434341360227495}
   m_StateMachineBehaviours:
   - {fileID: -4054200488416592656}
+  - {fileID: -7805136033629531355}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -235,8 +256,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce43fabc12822cd4ca8c9fe1a0e31b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChaseBehaviour
-  speed: 4
-  visionRange: 4
 --- !u!1107 &5636169065413767222
 AnimatorStateMachine:
   serializedVersion: 6
@@ -279,6 +298,7 @@ AnimatorState:
   - {fileID: -4184418586865788916}
   m_StateMachineBehaviours:
   - {fileID: 2761800355345455880}
+  - {fileID: -3314344177605158896}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -318,3 +338,15 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &8883162368230126193
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1efc3271e12a5cf4dbebb190ab8abd1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PatrolBehaviour
