@@ -519,6 +519,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
   m_Asset: {fileID: -944628639613478452, guid: 54136bf61d7066f4990c3ce7a9b6d5b9, type: 3}
   m_ActionId: 3543051c-c5e5-48dc-92f3-22d394c8adb4
+--- !u!1 &228752846 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6226503740888609155, guid: 5f85813695db0874b8168df01cbba630,
+    type: 3}
+  m_PrefabInstance: {fileID: 3982978846393950434}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &228752850
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228752846}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 37fb9e565f309394cad422b39ba2789a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &251550359
 GameObject:
   m_ObjectHideFlags: 0
@@ -9911,7 +9939,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6226503740888609155, guid: 5f85813695db0874b8168df01cbba630,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 228752850}
   m_SourcePrefab: {fileID: 100100000, guid: 5f85813695db0874b8168df01cbba630, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
