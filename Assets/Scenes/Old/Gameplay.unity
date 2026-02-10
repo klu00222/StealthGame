@@ -1259,6 +1259,20 @@ MonoBehaviour:
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
   m_ScrollDeltaPerTick: 6
+--- !u!114 &984858636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: Player/Move
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
+  m_Asset: {fileID: -944628639613478452, guid: 54136bf61d7066f4990c3ce7a9b6d5b9, type: 3}
+  m_ActionId: 3543051c-c5e5-48dc-92f3-22d394c8adb4
 --- !u!1 &1331545313
 GameObject:
   m_ObjectHideFlags: 0
@@ -4428,7 +4442,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991a75c65752d5e4ea272dbab50837df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 5
+  speed: 5
+  moveActionReference: {fileID: 984858636}
 --- !u!114 &1701691624
 MonoBehaviour:
   m_ObjectHideFlags: 0
