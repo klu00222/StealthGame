@@ -2,18 +2,20 @@ using UnityEngine;
 
 public class ChaseBehaviour : StateMachineBehaviour
 {
-
     private EnemyData data;
     private Transform player;
+
     private static readonly int IsChasingHash = Animator.StringToHash("isChasing");
     private static readonly int IsPatrollingHash = Animator.StringToHash("isPatrolling");
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo state, int layer)
     {
         data = animator.GetComponent<EnemyData>();
+
         if (player == null)
         {
             GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+
             if (playerObj != null)
             {
                 player = playerObj.transform;
@@ -38,21 +40,17 @@ public class ChaseBehaviour : StateMachineBehaviour
             Transform enemyTransform = animator.transform;
             Vector3 direction = player.position - enemyTransform.position;
 
-
             if (direction != Vector3.zero)
             {
                 //Handle rotation
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
                 Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
-
-
-                enemyTransform.rotation = Quaternion.Lerp(enemyTransform.rotation, rotation, data.rotationSpeed * Time.deltaTime);
-
-
+                enemyTransform.rotation = Quaternion.Lerp(enemyTransform.rotation, rotation, data.RotationSpeed * Time.deltaTime);
             }
 
             //Move towards player
-            enemyTransform.position = Vector3.MoveTowards(enemyTransform.position, player.position, data.speed * Time.deltaTime);
+            enemyTransform.position = Vector3.MoveTowards(enemyTransform.position, player.position, data.Speed * Time.deltaTime);
         }
     }
 }

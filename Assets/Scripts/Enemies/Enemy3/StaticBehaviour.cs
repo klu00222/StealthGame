@@ -1,16 +1,27 @@
 using UnityEngine;
 
-public class StaticBehaviour : MonoBehaviour
+public class StaticBehaviour : StateMachineBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    EnemyData data;
+
+    private readonly int isChasingHash = Animator.StringToHash("isChasing");
+    private readonly int isStaticHash = Animator.StringToHash("isStatic");
+
+    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        data = animator.GetComponent<EnemyData>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        if (data == null) return;
+
+        if (data.CanSeePlayer())
+        {
+            animator.SetBool(isChasingHash, true);
+            animator.SetBool(isStaticHash, false);
+
+            return;
+        }
     }
 }

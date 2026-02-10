@@ -5,30 +5,27 @@ using UnityEngine;
 public class EnemyData : MonoBehaviour
 {
     [Header("Patrol Settings")]
-    public float speed = 2.0f;
-    public float rotationSpeed = 10f;
+    public float Speed = 2.0f;
+    public float RotationSpeed = 10f;
+    public float WaitTime = 2.0f;
+    public Transform[] Waypoints;
     [SerializeField] private Transform waypointsParent;
-    public float waitTime = 2.0f;
-    [SerializeField] private bool loopWaypoints = true;
 
     [Header("Detection")]
     [SerializeField] private float detectionRange = 2.2f;
     [SerializeField] private float visionAngle = 45f;
     [SerializeField] private LayerMask obstacleMask;
     [SerializeField] private LayerMask playerMask;
-    [SerializeField] private Transform hitDetector;
 
-    public Transform[] waypoints;
-    public bool isWaiting = false;
-    public float timer;
-    public int currentIndex;
+    public bool IsWaiting = false;
+    public float Timer;
+    public int CurrentIndex;
+
     private Rigidbody2D rb;
     private Transform player;
 
     public static event Action<bool> OnDetectionChanged;
     private bool wasPlayerVisible;
-
-
 
     private void Awake()
     {
@@ -37,13 +34,14 @@ public class EnemyData : MonoBehaviour
 
         if (waypointsParent != null)
         {
-            waypoints = new Transform[waypointsParent.childCount];
+            Waypoints = new Transform[waypointsParent.childCount];
             for (int i = 0; i < waypointsParent.childCount; i++)
             {
-                waypoints[i] = waypointsParent.GetChild(i);
+                Waypoints[i] = waypointsParent.GetChild(i);
             }
         }
     }
+
     public bool CanSeePlayer()
     {
         if (player == null)
@@ -53,13 +51,16 @@ public class EnemyData : MonoBehaviour
 
         //Distance from player calculation
         float distance = Vector2.Distance(transform.position, player.position);
+
         if (distance > detectionRange)
         {
             UpdateDetectionState(false);
             return false;
         }
+
         Vector2 directionToPlayer = player.position - transform.position;
         float angleToPlayer = Vector2.Angle(transform.right, directionToPlayer);
+
         if (angleToPlayer > visionAngle / 2f)
         {
             UpdateDetectionState(false);
@@ -67,9 +68,9 @@ public class EnemyData : MonoBehaviour
         }
 
         //Check if an object is in the way (can't see player)
-
         Vector2 rayStart = (Vector2)transform.position + (directionToPlayer.normalized * 0.5f);
         RaycastHit2D hit = Physics2D.Raycast(rayStart, directionToPlayer, distance, obstacleMask);
+
         if (hit.collider != null)
         {
             UpdateDetectionState(false);

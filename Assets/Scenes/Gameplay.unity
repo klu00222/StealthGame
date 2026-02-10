@@ -8694,7 +8694,6 @@ GameObject:
   - component: {fileID: 1031026871}
   - component: {fileID: 1031026870}
   - component: {fileID: 1031026869}
-  - component: {fileID: 1031026872}
   m_Layer: 0
   m_Name: SlimePink
   m_TagString: Untagged
@@ -8798,18 +8797,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1031026872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1031026868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b68a3db8db0428a459df96a6e32251ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StaticBehaviour
 --- !u!1 &1052734165
 GameObject:
   m_ObjectHideFlags: 0
@@ -10053,6 +10040,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860207432700259551, guid: 5f85813695db0874b8168df01cbba630,
+        type: 3}
+      propertyPath: visionAngle
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860207432700259551, guid: 5f85813695db0874b8168df01cbba630,
+        type: 3}
+      propertyPath: detectionRange
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2531367010124017549, guid: 5f85813695db0874b8168df01cbba630,
+        type: 3}
+      propertyPath: visionAngle
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2531367010124017549, guid: 5f85813695db0874b8168df01cbba630,
+        type: 3}
+      propertyPath: detectionRange
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2531367010124017549, guid: 5f85813695db0874b8168df01cbba630,
         type: 3}

@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class PatrolBehaviour : StateMachineBehaviour
 {
-
     private EnemyData data;
-    private static readonly int IsPatrolling = Animator.StringToHash("isPatrolling");
-    private static readonly int IsChasing = Animator.StringToHash("isChasing");
+
+    private static readonly int isPatrolling = Animator.StringToHash("isPatrolling");
+    private static readonly int isChasing = Animator.StringToHash("isChasing");
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -14,35 +14,37 @@ public class PatrolBehaviour : StateMachineBehaviour
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (data == null || data.waypoints.Length == 0)
+        if (data == null || data.Waypoints.Length == 0)
         {
             return;
         }
 
         if (data.CanSeePlayer())
         {
-            animator.SetBool(IsChasing, true);
-            animator.SetBool(IsPatrolling, false);
+            animator.SetBool(isChasing, true);
+            animator.SetBool(isPatrolling, false);
             return;
         }
 
-        if (data.isWaiting)
+        if (data.IsWaiting)
         {
-            data.timer += Time.deltaTime;
-            if (data.timer >= data.waitTime)
+            data.Timer += Time.deltaTime;
+
+            if (data.Timer >= data.WaitTime)
             {
-                data.timer = 0;
-                data.isWaiting = false;
+                data.Timer = 0;
+                data.IsWaiting = false;
 
                 //Modulo wrapping (cycle through waypoints)
-                data.currentIndex = (data.currentIndex + 1) % data.waypoints.Length;
+                data.CurrentIndex = (data.CurrentIndex + 1) % data.Waypoints.Length;
             }
+
             return;
         }
 
         //Movement
-        Transform target = data.waypoints[data.currentIndex];
-        animator.transform.position = Vector2.MoveTowards(animator.transform.position, target.position, data.speed * Time.deltaTime);
+        Transform target = data.Waypoints[data.CurrentIndex];
+        animator.transform.position = Vector2.MoveTowards(animator.transform.position, target.position, data.Speed * Time.deltaTime);
 
         //Rotation
         Vector2 moveDirection = (target.position - animator.transform.position).normalized;
@@ -52,16 +54,13 @@ public class PatrolBehaviour : StateMachineBehaviour
             float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
             Quaternion rotation = Quaternion.Euler(0, 0, angle);
 
-            animator.transform.rotation = Quaternion.Lerp(animator.transform.rotation, rotation, data.rotationSpeed * Time.deltaTime);
+            animator.transform.rotation = Quaternion.Lerp(animator.transform.rotation, rotation, data.RotationSpeed * Time.deltaTime);
         }
 
         //Waypoint reached check
         if (Vector2.Distance(animator.transform.position, target.position) < 0.1f)
         {
-            data.isWaiting = true;
+            data.IsWaiting = true;
         }
-
     }
-
-
 }
