@@ -6,6 +6,7 @@ public class ChaseBehaviour : StateMachineBehaviour
     private EnemyData data;
     private Transform player;
     private static readonly int IsChasingHash = Animator.StringToHash("isChasing");
+    private static readonly int IsPatrollingHash = Animator.StringToHash("isPatrolling");
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo state, int layer)
     {
@@ -30,6 +31,7 @@ public class ChaseBehaviour : StateMachineBehaviour
         bool canSeePlayer = data.CanSeePlayer();
 
         animator.SetBool(IsChasingHash, canSeePlayer);
+        animator.SetBool(IsPatrollingHash, !canSeePlayer);
 
         if (canSeePlayer)
         {

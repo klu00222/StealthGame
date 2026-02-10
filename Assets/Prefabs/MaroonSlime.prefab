@@ -89,6 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7886636676983940031}
   - component: {fileID: 1950984007788826167}
+  - component: {fileID: 782117203704295712}
   m_Layer: 0
   m_Name: Visuals
   m_TagString: Untagged
@@ -170,6 +171,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &782117203704295712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5729159166104016629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 507850eec41af2548a530c81af17098f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LockSpriteRotation
 --- !u!1 &7494744352691171386
 GameObject:
   m_ObjectHideFlags: 0

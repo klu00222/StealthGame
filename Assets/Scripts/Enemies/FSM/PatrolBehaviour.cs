@@ -22,6 +22,7 @@ public class PatrolBehaviour : StateMachineBehaviour
         if (data.CanSeePlayer())
         {
             animator.SetBool(IsChasing, true);
+            animator.SetBool(IsPatrolling, false);
             return;
         }
 

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7166007617510031508}
   - component: {fileID: 1366276671504667856}
+  - component: {fileID: 3289770811589678455}
   m_Layer: 0
   m_Name: Visuals
   m_TagString: Untagged
@@ -91,6 +92,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &3289770811589678455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6226503740888609155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 507850eec41af2548a530c81af17098f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LockSpriteRotation
 --- !u!1 &6328047622872160800
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,7 +166,6 @@ GameObject:
   - component: {fileID: 7667771534268803226}
   - component: {fileID: 2339640991469689258}
   - component: {fileID: 2531367010124017549}
-  - component: {fileID: 1585755634430892616}
   m_Layer: 0
   m_Name: AquamarineSlime
   m_TagString: Untagged
@@ -305,23 +317,3 @@ MonoBehaviour:
   isWaiting: 0
   timer: 0
   currentIndex: 0
---- !u!114 &1585755634430892616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7879970105132556624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c34ee192beea70478e6ea11c6a39f2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VisionDetector
-  Player:
-    serializedVersion: 2
-    m_Bits: 256
-  Visible:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  detectionRange: 2.2
-  visionAngle: 45
