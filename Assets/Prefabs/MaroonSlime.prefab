@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7427007531750095892}
-  - component: {fileID: 4682180491848613727}
+  - component: {fileID: 1813791556479283655}
   m_Layer: 0
   m_Name: EnemyCone
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1462198367312780598}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4682180491848613727
+--- !u!114 &1813791556479283655
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,19 +41,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2899265019541202766}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c34ee192beea70478e6ea11c6a39f2f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a0a0198f80f7c14b8ad72b624e9a65a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VisionDetector
-  Player:
-    serializedVersion: 2
-    m_Bits: 256
-  Visible:
-    serializedVersion: 2
-    m_Bits: 512
-  detectionRange: 2.39
-  visionAngle: 78.19
+  m_EditorClassIdentifier: Assembly-CSharp::VisionCone
   visionMaterial: {fileID: 2100000, guid: 02d7ceac507e0364483b3c188ce2bfdf, type: 2}
-  visionResolution: 30
+  visionResolution: 50
+  visionAngle: 45
+  detectionRange: 2.2
 --- !u!1 &5412134142223881491
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +89,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7886636676983940031}
   - component: {fileID: 1950984007788826167}
-  - component: {fileID: 2551404037438137908}
   m_Layer: 0
   m_Name: Visuals
   m_TagString: Untagged
@@ -177,28 +170,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!95 &2551404037438137908
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5729159166104016629}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dddb31acd03402e41931e346dcb6289e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7494744352691171386
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,10 +179,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1462198367312780598}
-  - component: {fileID: 7425520585445985452}
-  - component: {fileID: 5772726785871945652}
   - component: {fileID: 5535580033695242150}
   - component: {fileID: 4951288086937748955}
+  - component: {fileID: 4919415092031406348}
+  - component: {fileID: 6391722271222755369}
   m_Layer: 0
   m_Name: MaroonSlime
   m_TagString: Untagged
@@ -237,37 +208,6 @@ Transform:
   - {fileID: 321049147635892866}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7425520585445985452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7494744352691171386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcf1591305c814b4db59bbb77493bebe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyChase
-  visionRange: 4
-  speed: 4
-  spriteGameObject: {fileID: 7886636676983940031}
---- !u!114 &5772726785871945652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7494744352691171386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0826810f0f39ca848b34a3d928ab6a2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyPatrol
-  speed: 2
-  time: 2
-  loopWaypoints: 1
-  WaypointsParent: {fileID: 0}
 --- !u!58 &5535580033695242150
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -298,7 +238,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -330,4 +270,46 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 1
+--- !u!95 &4919415092031406348
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7494744352691171386}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dddb31acd03402e41931e346dcb6289e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6391722271222755369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7494744352691171386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c34ee192beea70478e6ea11c6a39f2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VisionDetector
+  Player:
+    serializedVersion: 2
+    m_Bits: 0
+  Visible:
+    serializedVersion: 2
+    m_Bits: 0
+  detectionRange: 2.2
+  visionAngle: 45
