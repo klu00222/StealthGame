@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(Animator))]
 public class EnemyChase : MonoBehaviour
 {
     private Transform player;
@@ -32,6 +33,9 @@ public class EnemyChase : MonoBehaviour
             // Rotate enemy toward player
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0f, 0f, angle);
+
+            //Reset visuals gameobject's position and rotation
+            spriteGameObject.localPosition = Vector3.zero;
             spriteGameObject.rotation = Quaternion.identity;
 
             // Move toward player
