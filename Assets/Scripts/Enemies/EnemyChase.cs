@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(Animator))]
 public class EnemyChase : MonoBehaviour
 {
     private Transform player;
@@ -16,17 +15,19 @@ public class EnemyChase : MonoBehaviour
 
     private Animator animator;
 
+    private static readonly int IsPatrolling = Animator.StringToHash("isPatrolling");
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        animator = GetComponent<Animator>();
+        animator = spriteGameObject.GetComponent<Animator>();
     }
 
     private void Update()
     {
         if (IsPlayerClose())
         {
-            animator.SetBool("isPatrolling", false);
+            animator.SetBool(IsPatrolling, false);
 
             Vector3 direction = player.position - transform.position;
 
@@ -43,7 +44,7 @@ public class EnemyChase : MonoBehaviour
         }
         else
         {
-            animator.SetBool("isPatrolling", true);
+            animator.SetBool(IsPatrolling, true);
         }
     }
 
@@ -55,6 +56,9 @@ public class EnemyChase : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        SceneManager.LoadScene("Ending");
+        if (collision.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("Ending");
+        }
     }
 }

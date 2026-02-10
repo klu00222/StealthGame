@@ -10,6 +10,8 @@ public class ChaseBehaviour : StateMachineBehaviour
     private Transform player;
     private bool playerClose;
 
+    private static readonly int IsChasingHash = Animator.StringToHash("isChasing");
+
     private void OnEnable()
     {
         VisionDetector.OnPlayerDetected += IsPlayerClose;
@@ -28,7 +30,7 @@ public class ChaseBehaviour : StateMachineBehaviour
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         playerClose = IsPlayerClose(animator.transform);
-        animator.SetBool("isChasing", playerClose);
+        animator.SetBool(IsChasingHash, playerClose);
 
         Vector2 direction = player.position - animator.transform.position;
         animator.transform.position += speed * Time.deltaTime * (Vector3)direction.normalized;
@@ -41,7 +43,7 @@ public class ChaseBehaviour : StateMachineBehaviour
 
     private bool IsPlayerClose(Transform transform)
     {
-        var dist = Vector3.Distance(transform.position, player.position);
-        return (dist < visionRange);
+        float dist = Vector3.Distance(transform.position, player.position);
+        return dist < visionRange;
     }
 }

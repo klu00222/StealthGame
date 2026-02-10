@@ -16,6 +16,9 @@ public class PatrolBehaviour : StateMachineBehaviour
 
     public LayerMask Obstacles;
 
+    private static readonly int IsPatrolling = Animator.StringToHash("isPatrolling");
+    private static readonly int IsChasing = Animator.StringToHash("isChasing");
+
     private void OnEnable()
     {
         VisionDetector.OnPlayerDetected += IsPlayerClose;
@@ -39,8 +42,8 @@ public class PatrolBehaviour : StateMachineBehaviour
     {
         bool timeUp = IsTimeUp();
 
-        animator.SetBool("isChasing", playerClose);
-        animator.SetBool("isPatrolling", !timeUp);
+        animator.SetBool(IsChasing, playerClose);
+        animator.SetBool(IsPatrolling, !timeUp);
 
         animator.transform.Translate(speed * Time.deltaTime * animator.transform.right, Space.World);
 
@@ -60,11 +63,14 @@ public class PatrolBehaviour : StateMachineBehaviour
         if (hitDetection == null)
         {
             hitDetection = transform.Find("HitDetector");
-            if (hitDetection == null) return false;
+            if (hitDetection == null)
+            {
+                return false;
+            }
         }
 
         RaycastHit2D hit = Physics2D.Raycast(hitDetection.position, transform.right, obstacleDistance, Obstacles);
-        return (hit.collider != null);
+        return hit.collider != null;
     }
 
     private void Flip(Transform transform)
@@ -75,6 +81,6 @@ public class PatrolBehaviour : StateMachineBehaviour
     private bool IsTimeUp()
     {
         timer += Time.deltaTime;
-        return (timer > stayTime);
+        return timer > stayTime;
     }
 }

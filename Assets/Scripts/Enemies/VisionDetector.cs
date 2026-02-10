@@ -12,15 +12,6 @@ public class VisionDetector : MonoBehaviour
     [SerializeField]
     private float visionAngle;
 
-    [Header("Vision Rendering")]
-    [SerializeField]
-    private Material visionMaterial;
-    [SerializeField]
-    private int visionResolution = 30;
-
-    private Mesh visionMesh;
-    private MeshFilter meshFilter;
-
     public static event Action OnPlayerDetected;
 
     private void OnDrawGizmos()
@@ -37,21 +28,6 @@ public class VisionDetector : MonoBehaviour
         Gizmos.color = Color.white;
     }
 
-    private void Awake()
-    {
-        meshFilter = gameObject.AddComponent<MeshFilter>();
-
-        MeshRenderer renderer = gameObject.AddComponent<MeshRenderer>();
-        renderer.material = visionMaterial;
-
-        visionMesh = new Mesh
-        {
-            name = "Vision Cone Mesh"
-        };
-
-        meshFilter.mesh = visionMesh;
-    }
-
     private void Update()
     {
         if (DetectPlayers().Length > 0)
@@ -60,46 +36,6 @@ public class VisionDetector : MonoBehaviour
         }
     }
 
-    //Wait for enemy to move and detect players first before drawing vision cone
-    private void LateUpdate()
-    {
-        DrawVisionCone();
-    }
-
-    private void DrawVisionCone()
-    {
-        int vertexCount = visionResolution + 2;
-
-        Vector3[] vertices = new Vector3[vertexCount];
-        int[] triangles = new int[(vertexCount - 2) * 3];
-
-        vertices[0] = Vector3.zero;
-
-        float angleStep = visionAngle / visionResolution;
-        float startAngle = -visionAngle / 2f;
-
-        for (int i = 0; i <= visionResolution; i++)
-        {
-            float angle = startAngle + (angleStep * i);
-
-            // LOCAL SPACE — DO NOT USE transform.right
-            Vector3 dir = Quaternion.Euler(0f, 0f, angle) * Vector3.right;
-            vertices[i + 1] = dir * detectionRange;
-        }
-
-        int triIndex = 0;
-        for (int i = 0; i < vertexCount - 2; i++)
-        {
-            triangles[triIndex++] = 0;
-            triangles[triIndex++] = i + 1;
-            triangles[triIndex++] = i + 2;
-        }
-
-        visionMesh.Clear();
-        visionMesh.vertices = vertices;
-        visionMesh.triangles = triangles;
-        visionMesh.RecalculateBounds();
-    }
 
     private Transform[] DetectPlayers()
     {
