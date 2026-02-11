@@ -1,44 +1,33 @@
-## Delivery 01 - $(Game Title)
-
-![$(Game Title)](Screenshots/screenshot01.png "$(Game Title)")
+## Delivery 02 - StealthGame
 
 ### Description
-
-$(Your Game Description)
+A 2D game where the player must reach the end of a level avoiding the enemies' sight and get away in case of being detected. 
 
 ### Features
-
- - $(Game Feature 01)
- - $(Game Feature 02)
- - $(Game Feature 03)
+ - Best time score
+ - Distance travelled
+ - Avoiding enemies
+ - Hiding places to avoid detection
 
 ### Controls
-
 Keyboard:
- - $(Game Control 01)
- - $(Game Control 02)
- - $(Game Control 03)
+ - Move: WASD or Arrow Keys
+ - Escape: Quit game (any point)
+ - Enter: Start game (Title screen) or Restart game (Ending screen)
 
 ### Screenshots
-
-_TODO: Show your game to the world, animated GIFs recommended!._
+![GameStart](./Screenshots/Init.gif)
 
 ### Developers
 
- - $(Developer 01) - $(Role/Tasks Developed)
- - $(Developer 02) - $(Role/Tasks Developed)
- - $(Developer 03) - $(Role/Tasks Developed)
-
-### Links
-
- - YouTube Gameplay: $(YouTube Link)
- - itch.io Release: $(itch.io Game Page)
- - Steam Release: $(Steam Game Page)
+ - Alexia Martínez - Programmer, Artist
+ - Arnau Badenas - Programmer, Animator
+ - Carla Pallés - Programmer, Animator
 
 ### License
 
 This game sources are licensed under MIT license. Check [LICENSE](LICENSE) for further details.
 
-$(Additional Licenses)
+For additional licenses (art and music) see [LICENSE](Assets/LICENSES.txt).
 
-*Copyright (c) $(Year) $(Developers Names)*
+PlatformerGame © 2026 by Alexia Martínez, Carla Pallés, Arnau Badenas

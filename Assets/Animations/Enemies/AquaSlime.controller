@@ -77,6 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce43fabc12822cd4ca8c9fe1a0e31b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChaseBehaviour
+  chaseSpeed: 3
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -188,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce43fabc12822cd4ca8c9fe1a0e31b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChaseBehaviour
+  chaseSpeed: 3
 --- !u!1101 &5731829171063816986
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

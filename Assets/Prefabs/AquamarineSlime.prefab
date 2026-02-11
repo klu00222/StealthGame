@@ -304,6 +304,8 @@ MonoBehaviour:
   WaitTime: 2
   Waypoints: []
   waypointsParent: {fileID: 0}
+  CurrentIndex: 0
+  detectionRange: 4.46
   detectionRange: 5
   visionAngle: 60
   obstacleMask:
@@ -311,4 +313,3 @@ MonoBehaviour:
     m_Bits: 512
   IsWaiting: 0
   Timer: 0
-  CurrentIndex: 0

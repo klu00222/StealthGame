@@ -14,7 +14,6 @@ public class ChaseBehaviour : StateMachineBehaviour
 
     public static event Action<bool> OnChasingChange;
 
-
     public override void OnStateEnter(Animator animator, AnimatorStateInfo state, int layer)
     {
         data = animator.GetComponent<EnemyData>();
