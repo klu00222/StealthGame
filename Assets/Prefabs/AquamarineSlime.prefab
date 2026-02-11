@@ -150,8 +150,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VisionCone
   visionMaterial: {fileID: 2100000, guid: 02d7ceac507e0364483b3c188ce2bfdf, type: 2}
   visionResolution: 30
-  visionAngle: 60
-  detectionRange: 3.5
 --- !u!1 &7879970105132556624
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,14 +297,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf554cd62ed09a64aac7bb751f532d5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  Speed: 10
+  Speed: 15
   RotationSpeed: 10
   WaitTime: 2
   Waypoints: []
   waypointsParent: {fileID: 0}
   CurrentIndex: 0
   detectionRange: 4.46
-  detectionRange: 5
   visionAngle: 60
   obstacleMask:
     serializedVersion: 2
