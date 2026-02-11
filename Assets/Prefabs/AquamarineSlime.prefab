@@ -81,7 +81,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 30
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 2355f3924989465479b8cc68e2bbfc53, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -322,21 +322,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf554cd62ed09a64aac7bb751f532d5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  speed: 2
-  rotationSpeed: 10
+  Speed: 2
+  RotationSpeed: 10
+  WaitTime: 2
+  Waypoints: []
   waypointsParent: {fileID: 0}
-  waitTime: 2
-  loopWaypoints: 1
-  detectionRange: 2.2
-  visionAngle: 45
+  detectionRange: 3.5
+  visionAngle: 60
   obstacleMask:
     serializedVersion: 2
     m_Bits: 512
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 256
-  hitDetector: {fileID: 0}
-  waypoints: []
-  isWaiting: 0
-  timer: 0
-  currentIndex: 0
+  IsWaiting: 0
+  Timer: 0
+  CurrentIndex: 0

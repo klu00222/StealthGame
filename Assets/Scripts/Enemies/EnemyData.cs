@@ -15,7 +15,6 @@ public class EnemyData : MonoBehaviour
     [SerializeField] private float detectionRange = 2.2f;
     [SerializeField] private float visionAngle = 45f;
     [SerializeField] private LayerMask obstacleMask;
-    [SerializeField] private LayerMask playerMask;
 
     public bool IsWaiting = false;
     public float Timer;
