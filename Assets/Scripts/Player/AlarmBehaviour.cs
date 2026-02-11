@@ -1,16 +1,13 @@
 using UnityEngine;
-using System;
 
 public class AlarmBehaviour : MonoBehaviour
 {
-    [SerializeField]
-    public GameObject Alarm;
-    public SpriteRenderer alarmSpriteRenderer;
+    public GameObject alarm;
+    private SpriteRenderer alarmSpriteRenderer;
 
     public void Awake()
     {
-        Alarm = gameObject.transform.Find("Alarm").gameObject;
-        alarmSpriteRenderer = Alarm.GetComponent<SpriteRenderer>();
+        alarmSpriteRenderer = alarm.GetComponent<SpriteRenderer>();
     }
 
     private void OnEnable()
@@ -25,9 +22,9 @@ public class AlarmBehaviour : MonoBehaviour
 
     private void ToggleIcon(bool seen)
     {
-        if (Alarm != null)
+        if (alarm != null)
         {
-            alarmSpriteRenderer.enabled = (seen);
+            alarmSpriteRenderer.enabled = seen;
         }
     }
 }

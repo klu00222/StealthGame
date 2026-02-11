@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(SpriteRenderer))]
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
@@ -34,8 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnMovePerformed(InputAction.CallbackContext value)
     {
-        // Read value from control
-        // The type depends on what type of controls the action is bound to
+        //Read value from control
         moveInput = value.ReadValue<Vector2>();
     }
 

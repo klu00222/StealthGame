@@ -24,6 +24,7 @@ public class PlayerAnimation : MonoBehaviour
     {
         PlayerMovement.OnMoveInput += HandleAnimationUpdate;
     }
+
     private void OnDisable()
     {
         PlayerMovement.OnMoveInput -= HandleAnimationUpdate;

@@ -5,9 +5,8 @@ public class DistanceCounter : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI distanceText;
-
-    private Vector3 position;
     private float distanceTravelled;
+    private Vector3 position;
 
     private void Start()
     {
