@@ -95,7 +95,8 @@ Tilemap by Cup Nooble:
  [ Thanks a lot for reading ^^ ]
  
  ---------------------------------------------------------------------------------------------
- Music: Pizza Doggy’s Game Assets – License Agreement
+ 
+ Background music: Pizza Doggy’s Game Assets – License Agreement
 
 1. What You Can Do
 	- Use the assets in any game (commercial or not).
@@ -106,3 +107,8 @@ Tilemap by Cup Nooble:
 	- Don’t include them in asset packs, templates, or bundles.
 3. Attribution
 	Giving credit is appreciated, but not required!
+
+---------------------------------------------------------------------------------------------
+
+Chase music: chajamakesmusic
+License: Creative Commons Attribution v4.0 International
