@@ -6,6 +6,8 @@ public class ChaseBehaviour : StateMachineBehaviour
     private EnemyData data;
     private Transform player;
 
+    [SerializeField] private float chaseSpeed = 3.0f;
+
     private static readonly int IsChasingHash = Animator.StringToHash("isChasing");
     private static readonly int IsPatrollingHash = Animator.StringToHash("isPatrolling");
 
@@ -60,7 +62,7 @@ public class ChaseBehaviour : StateMachineBehaviour
             }
 
             //Move towards player
-            enemyTransform.position = Vector3.MoveTowards(enemyTransform.position, player.position, data.Speed * Time.deltaTime);
+            enemyTransform.position = Vector3.MoveTowards(enemyTransform.position, player.position, chaseSpeed * Time.deltaTime);
         }
     }
 }
