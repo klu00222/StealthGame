@@ -9497,15 +9497,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1860207432700259551, guid: 5f85813695db0874b8168df01cbba630,
+    - target: {fileID: 2531367010124017549, guid: 5f85813695db0874b8168df01cbba630,
         type: 3}
-      propertyPath: visionAngle
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 1860207432700259551, guid: 5f85813695db0874b8168df01cbba630,
-        type: 3}
-      propertyPath: detectionRange
-      value: 3.5
+      propertyPath: Speed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2531367010124017549, guid: 5f85813695db0874b8168df01cbba630,
         type: 3}

@@ -7,7 +7,7 @@ public class ChaseBehaviour : StateMachineBehaviour
     private Transform player;
     private Rigidbody2D rb;
 
-    [SerializeField] private float chaseSpeed = 3.0f;
+    [SerializeField] private float chaseSpeedMult = 3.0f;
 
     private static readonly int IsChasingHash = Animator.StringToHash("isChasing");
     private static readonly int IsPatrollingHash = Animator.StringToHash("isPatrolling");
@@ -40,7 +40,7 @@ public class ChaseBehaviour : StateMachineBehaviour
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (player == null || data == null)
+        if (player == null || data == null || rb == null)
         {
             return;
         }
@@ -52,22 +52,22 @@ public class ChaseBehaviour : StateMachineBehaviour
 
         if (canSeePlayer)
         {
-            Transform enemyTransform = animator.transform;
-            Vector3 direction = player.position - enemyTransform.position;
+            Vector2 currentPosition = rb.position;
+            Vector2 targetPosition = player.position;
+            Vector2 direction = (targetPosition - currentPosition).normalized;
 
-            if (direction != Vector3.zero)
+
+            if (direction != Vector2.zero)
             {
                 //Handle rotation
-                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-                Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
-                enemyTransform.rotation = Quaternion.Lerp(enemyTransform.rotation, rotation, data.RotationSpeed * Time.deltaTime);
-                //rb.MoveRotation(Mathf.LerpAngle(rb.rotation, angle, data.RotationSpeed * Time.deltaTime));
+                rb.MoveRotation(Mathf.LerpAngle(rb.rotation, targetAngle, data.RotationSpeed * Time.deltaTime));
             }
 
             //Move towards player
-            enemyTransform.position = Vector3.MoveTowards(enemyTransform.position, player.position, chaseSpeed * Time.deltaTime);
-            //rb.MovePosition(enemyTransform.position);
+            Vector2 newPosition = Vector2.MoveTowards(currentPosition, targetPosition, data.Speed * chaseSpeedMult * Time.deltaTime);
+            rb.MovePosition(newPosition);
         }
     }
 }

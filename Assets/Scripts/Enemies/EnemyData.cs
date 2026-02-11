@@ -12,8 +12,8 @@ public class EnemyData : MonoBehaviour
     [SerializeField] private Transform waypointsParent;
 
     [Header("Detection")]
-    [SerializeField] private float detectionRange = 2.2f;
-    [SerializeField] private float visionAngle = 45f;
+    public float detectionRange = 2.2f;
+    public float visionAngle = 45f;
     [SerializeField] private LayerMask obstacleMask;
 
     public bool IsWaiting = false;
@@ -50,7 +50,6 @@ public class EnemyData : MonoBehaviour
 
         //Distance from player calculation
         float distance = Vector2.Distance(transform.position, player.position);
-
         if (distance > detectionRange)
         {
             UpdateDetectionState(false);
@@ -68,7 +67,7 @@ public class EnemyData : MonoBehaviour
 
         //Check if an object is in the way (can't see player)
         Vector2 rayStart = (Vector2)transform.position + (directionToPlayer.normalized * 0.5f);
-        RaycastHit2D hit = Physics2D.Raycast(rayStart, directionToPlayer, distance, obstacleMask);
+        RaycastHit2D hit = Physics2D.Raycast(rayStart, directionToPlayer, detectionRange, obstacleMask);
 
         if (hit.collider != null)
         {

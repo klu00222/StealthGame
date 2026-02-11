@@ -56,13 +56,10 @@ public class PatrolBehaviour : StateMachineBehaviour
         {
             float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
             rb.MoveRotation(Mathf.LerpAngle(rb.rotation, angle, data.RotationSpeed * Time.deltaTime));
-            //Quaternion rotation = Quaternion.Euler(0, 0, angle);
-
-            //animator.transform.rotation = Quaternion.Lerp(animator.transform.rotation, rotation, data.RotationSpeed * Time.deltaTime);
         }
 
         //Waypoint reached check
-        if (Vector2.Distance(rb.position, target.position) < 0.1f)
+        if (Vector2.Distance(rb.position, target.position) < 0.3f)
         {
             data.IsWaiting = true;
         }
