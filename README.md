@@ -12,14 +12,13 @@ A 2D game where the player must reach the end of a level avoiding the enemies' s
 ### Controls
 Keyboard:
  - Move: WASD or Arrow Keys
- - Escape: Quit game (any point)
+ - Escape: Quit game (at any point)
  - Enter: Start game (Title screen) or Restart game (Ending screen)
 
 ### Screenshots
 ![GameStart](./Screenshots/Init.gif)
 
 ### Developers
-
  - Alexia Martínez - Programmer, Artist
  - Arnau Badenas - Programmer, Animator
  - Carla Pallés - Programmer, Animator
@@ -30,4 +29,4 @@ This game sources are licensed under MIT license. Check [LICENSE](LICENSE) for f
 
 For additional licenses (art and music) see [LICENSE](Assets/LICENCES.txt).
 
-PlatformerGame © 2026 by Alexia Martínez, Carla Pallés, Arnau Badenas
+PlatformerGame © 2026 by Arnau Badenas, Alexia Martínez and Carla Pallés
