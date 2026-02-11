@@ -1,6 +1,5 @@
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class PlayerGizmos : MonoBehaviour
 {
@@ -22,7 +21,7 @@ public class PlayerGizmos : MonoBehaviour
             GUIStyle ColorLabel = new GUIStyle();
             ColorLabel.normal.textColor = Color.red;
 
-            UnityEditor.Handles.Label(LabelPosition, $"Distancia: {DistanceEnemyPlayer:F0} m", ColorLabel);
+            Handles.Label(LabelPosition, $"Distancia: {DistanceEnemyPlayer:F0} m", ColorLabel);
         }
     }
 }

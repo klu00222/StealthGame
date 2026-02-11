@@ -1,9 +1,17 @@
 using UnityEngine;
+using System;
 
 public class AlarmBehaviour : MonoBehaviour
 {
     [SerializeField]
     public GameObject Alarm;
+    public SpriteRenderer alarmSpriteRenderer;
+
+    public void Awake()
+    {
+        Alarm = gameObject.transform.Find("Alarm").gameObject;
+        alarmSpriteRenderer = Alarm.GetComponent<SpriteRenderer>();
+    }
 
     private void OnEnable()
     {
@@ -19,7 +27,7 @@ public class AlarmBehaviour : MonoBehaviour
     {
         if (Alarm != null)
         {
-            Alarm.SetActive(seen);
+            alarmSpriteRenderer.enabled = (seen);
         }
     }
 }

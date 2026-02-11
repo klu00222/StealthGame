@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class ChaseBehaviour : StateMachineBehaviour
@@ -5,8 +6,12 @@ public class ChaseBehaviour : StateMachineBehaviour
     private EnemyData data;
     private Transform player;
 
+    [SerializeField] private float chaseSpeed = 3.0f;
+
     private static readonly int IsChasingHash = Animator.StringToHash("isChasing");
     private static readonly int IsPatrollingHash = Animator.StringToHash("isPatrolling");
+
+    public static event Action<bool> OnChasingChange;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo state, int layer)
     {
@@ -21,6 +26,13 @@ public class ChaseBehaviour : StateMachineBehaviour
                 player = playerObj.transform;
             }
         }
+
+        OnChasingChange?.Invoke(true);
+    }
+
+    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        OnChasingChange?.Invoke(false);
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -50,7 +62,7 @@ public class ChaseBehaviour : StateMachineBehaviour
             }
 
             //Move towards player
-            enemyTransform.position = Vector3.MoveTowards(enemyTransform.position, player.position, data.Speed * Time.deltaTime);
+            enemyTransform.position = Vector3.MoveTowards(enemyTransform.position, player.position, chaseSpeed * Time.deltaTime);
         }
     }
 }
