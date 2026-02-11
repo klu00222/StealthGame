@@ -712,34 +712,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
   m_Asset: {fileID: -944628639613478452, guid: 54136bf61d7066f4990c3ce7a9b6d5b9, type: 3}
   m_ActionId: 3543051c-c5e5-48dc-92f3-22d394c8adb4
---- !u!1 &228752846 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6226503740888609155, guid: 5f85813695db0874b8168df01cbba630,
-    type: 3}
-  m_PrefabInstance: {fileID: 3982978846393950434}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &228752850
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 228752846}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 37fb9e565f309394cad422b39ba2789a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &251550359
 GameObject:
   m_ObjectHideFlags: 0
@@ -6604,8 +6576,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -365.7, y: 130.41}
-  m_SizeDelta: {x: 33.379, y: 54.623}
+  m_AnchoredPosition: {x: -900.03, y: 371.36}
+  m_SizeDelta: {x: 78.913, y: 106.4114}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &683288048
 MonoBehaviour:
@@ -6893,8 +6865,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 52
+  m_fontSizeBase: 52
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6962,8 +6934,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -229.70001, y: 178.1}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -614.1098, y: 474.28738}
+  m_SizeDelta: {x: 462.6424, y: 74.3227}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &992621154
 GameObject:
@@ -8366,7 +8338,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -8533,9 +8505,9 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -8621,8 +8593,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -365.7, y: 187.70001}
-  m_SizeDelta: {x: 40.6941, y: 42.8122}
+  m_AnchoredPosition: {x: -900.97, y: 485}
+  m_SizeDelta: {x: 80.7914, y: 76.6764}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1296977105
 MonoBehaviour:
@@ -8955,8 +8927,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -229.7, y: 128.1}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -619.8141, y: 371.36}
+  m_SizeDelta: {x: 451.2339, y: 88.0129}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2014019159
 MonoBehaviour:
@@ -9006,8 +8978,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 52
+  m_fontSizeBase: 52
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9548,11 +9520,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6226503740888609155, guid: 5f85813695db0874b8168df01cbba630,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 228752850}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f85813695db0874b8168df01cbba630, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
