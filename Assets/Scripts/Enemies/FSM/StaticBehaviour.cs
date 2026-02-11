@@ -40,8 +40,6 @@ public class StaticBehaviour : StateMachineBehaviour
             {
                 moveToFirstPos = false;
             }
-            
-            return;
         }
 
         if (data.CanSeePlayer())

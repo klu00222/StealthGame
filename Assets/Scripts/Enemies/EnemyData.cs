@@ -10,25 +10,24 @@ public class EnemyData : MonoBehaviour
     public float WaitTime = 2.0f;
     public Transform[] Waypoints;
     [SerializeField] private Transform waypointsParent;
+    public int CurrentIndex;
 
     [Header("Detection")]
     [SerializeField] private float detectionRange = 2.2f;
     [SerializeField] private float visionAngle = 45f;
     [SerializeField] private LayerMask obstacleMask;
 
+    [Header("Wait Settings")]
     public bool IsWaiting = false;
     public float Timer;
-    public int CurrentIndex;
 
-    private Rigidbody2D rb;
     private Transform player;
+    private bool wasPlayerVisible;
 
     public static event Action<bool> OnDetectionChanged;
-    private bool wasPlayerVisible;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player").transform;
 
         if (waypointsParent != null)
