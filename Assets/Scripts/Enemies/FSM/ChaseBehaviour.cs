@@ -5,6 +5,7 @@ public class ChaseBehaviour : StateMachineBehaviour
 {
     private EnemyData data;
     private Transform player;
+    private Rigidbody2D rb;
 
     [SerializeField] private float chaseSpeed = 3.0f;
 
@@ -13,9 +14,11 @@ public class ChaseBehaviour : StateMachineBehaviour
 
     public static event Action<bool> OnChasingChange;
 
+
     public override void OnStateEnter(Animator animator, AnimatorStateInfo state, int layer)
     {
         data = animator.GetComponent<EnemyData>();
+        rb = animator.GetComponent<Rigidbody2D>();
 
         if (player == null)
         {
@@ -59,10 +62,12 @@ public class ChaseBehaviour : StateMachineBehaviour
 
                 Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
                 enemyTransform.rotation = Quaternion.Lerp(enemyTransform.rotation, rotation, data.RotationSpeed * Time.deltaTime);
+                //rb.MoveRotation(Mathf.LerpAngle(rb.rotation, angle, data.RotationSpeed * Time.deltaTime));
             }
 
             //Move towards player
             enemyTransform.position = Vector3.MoveTowards(enemyTransform.position, player.position, chaseSpeed * Time.deltaTime);
+            //rb.MovePosition(enemyTransform.position);
         }
     }
 }
