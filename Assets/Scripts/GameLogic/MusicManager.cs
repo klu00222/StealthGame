@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    public AudioSource BackgroundMusic;
-    public AudioSource ChaseMusic;
+    [SerializeField]
+    private AudioSource backgroundMusic;
+    [SerializeField]
+    private AudioSource chaseMusic;
 
     private void OnEnable()
     {
@@ -19,13 +21,13 @@ public class MusicManager : MonoBehaviour
     {
         if (state)
         {
-            ChaseMusic.Play();
-            BackgroundMusic.Stop();
+            chaseMusic.Play();
+            backgroundMusic.Stop();
         }
         else
         {
-            ChaseMusic.Stop();
-            BackgroundMusic.Play();
+            chaseMusic.Stop();
+            backgroundMusic.Play();
         }
     }
 }

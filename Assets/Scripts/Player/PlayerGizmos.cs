@@ -7,6 +7,7 @@ public class PlayerGizmos : MonoBehaviour
     public void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
+
         EnemyData[] AllEnemies = FindObjectsByType<EnemyData>(FindObjectsSortMode.None);
 
         for (int i = 0; i < AllEnemies.Length; i++)
@@ -18,10 +19,10 @@ public class PlayerGizmos : MonoBehaviour
 
             float DistanceEnemyPlayer = Vector2.Distance(Enemy.transform.position, transform.position);
 
-            GUIStyle ColorLabel = new();
+            GUIStyle ColorLabel = new GUIStyle();
             ColorLabel.normal.textColor = Color.red;
 
-            Handles.Label(LabelPosition, $"Distance: {DistanceEnemyPlayer:F0} m", ColorLabel);
+            Handles.Label(LabelPosition, $"Distancia: {DistanceEnemyPlayer:F0} m", ColorLabel);
         }
     }
 }

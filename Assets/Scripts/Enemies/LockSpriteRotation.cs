@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+
 public class LockSpriteRotation : MonoBehaviour
 {
     private Quaternion initialRotation;

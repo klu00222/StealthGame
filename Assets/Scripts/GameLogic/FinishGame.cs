@@ -7,7 +7,7 @@ public class FinishGame : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Timer timer = FindFirstObjectByType<Timer>();
+            Timer timer = Object.FindFirstObjectByType<Timer>();
             TimeManager.UpdateBestTime(timer.GetElapsedTime());
         }
 

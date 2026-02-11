@@ -4,7 +4,7 @@ using UnityEngine;
 public class TimeManager : MonoBehaviour
 {
     public static TimeManager Instance;
-    private static float bestTime = float.MaxValue;
+    public static float BestTime = float.MaxValue;
 
     public void Awake()
     {
@@ -17,25 +17,25 @@ public class TimeManager : MonoBehaviour
         else Destroy(gameObject);  
     }
 
-    public static void UpdateBestTime(float time)
+    public static void UpdateBestTime(float Time)
     {
-        if (time < bestTime)
+        if (Time < BestTime)
         {
-            bestTime = time;
+            BestTime = Time;
         }
     }
 
-    public void ShowBestTimeText(TextMeshProUGUI bestTimeText)
+    public void ShowBestTimeText(TextMeshProUGUI BestTimeText)
     {
-        if (bestTime == float.MaxValue)
+        if (BestTime == float.MaxValue)
         {
-            bestTimeText.text = "Best time is: --:--";
+            BestTimeText.text = "Best time is: --:--";
             return;
         }
 
-        int minutes = Mathf.FloorToInt(bestTime / 60);
-        int seconds = Mathf.FloorToInt(bestTime % 60);
+        int minutes = Mathf.FloorToInt(BestTime / 60);
+        int seconds = Mathf.FloorToInt(BestTime % 60);
 
-        bestTimeText.text = "Best time is: " + string.Format("{0:00}:{1:00}", minutes, seconds);
+        BestTimeText.text = "Best time is: " + string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }

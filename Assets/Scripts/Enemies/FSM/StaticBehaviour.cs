@@ -4,7 +4,7 @@ public class StaticBehaviour : StateMachineBehaviour
 {
     private EnemyData data;
 
-    // Static is the same as patrolling in this behaviour only it is in one place
+    // In this behaviour static is the same as patrolling only it is in one place
     private static readonly int isPatrolling = Animator.StringToHash("isPatrolling");
     private static readonly int isChasing = Animator.StringToHash("isChasing");
 
@@ -18,10 +18,7 @@ public class StaticBehaviour : StateMachineBehaviour
         data = animator.GetComponentInParent<EnemyData>();
         data.IsWaiting = false;
 
-        if (firstPos == Vector3.zero)
-        {
-            firstPos = animator.transform.position;
-        }
+        if (firstPos == Vector3.zero) firstPos = animator.transform.position;
         else if (Vector3.Distance(firstPos, animator.transform.position) > 0.1f)
         {
             moveToFirstPos = true;

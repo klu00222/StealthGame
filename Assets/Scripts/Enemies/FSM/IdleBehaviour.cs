@@ -31,7 +31,6 @@ public class IdleBehaviour : StateMachineBehaviour
         }
 
         timer += Time.deltaTime;
-
         if (timer >= stayTime)
         {
             animator.SetBool(IsPatrolling, true);

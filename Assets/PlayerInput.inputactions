@@ -7,6 +7,15 @@
             "id": "09f19d17-80e9-4cc5-948c-aa360b39e22c",
             "actions": [
                 {
+                    "name": "SaveScore",
+                    "type": "Button",
+                    "id": "cefa4c87-af9c-4fa9-8cb1-d7c19c9a2314",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Move",
                     "type": "Value",
                     "id": "3543051c-c5e5-48dc-92f3-22d394c8adb4",
@@ -17,6 +26,17 @@
                 }
             ],
             "bindings": [
+                {
+                    "name": "",
+                    "id": "394a71a5-cd75-4388-8a3a-4d19bbdd1390",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SaveScore",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
                 {
                     "name": "Arrows",
                     "id": "39934a8b-28fd-4b85-8f40-2b87c183c944",
@@ -126,6 +146,34 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "859790c2-e08b-4e07-b02e-cf592191654f",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "3aab717e-ada1-46e7-8e55-d0b429b14d7b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f465dfa5-bda3-4532-9fd2-c86815b15335",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
