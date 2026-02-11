@@ -28,6 +28,6 @@ Keyboard:
 
 This game sources are licensed under MIT license. Check [LICENSE](LICENSE) for further details.
 
-For additional licenses (art and music) see [LICENSE](Assets/LICENSES.txt).
+For additional licenses (art and music) see [LICENSE](Assets/LICENCES.txt).
 
 PlatformerGame © 2026 by Alexia Martínez, Carla Pallés, Arnau Badenas
