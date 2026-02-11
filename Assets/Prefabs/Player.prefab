@@ -15,7 +15,10 @@ GameObject:
   - component: {fileID: 8944323957678532634}
   - component: {fileID: 5092162718001905965}
   - component: {fileID: 640164505386935689}
-  m_Layer: 0
+  - component: {fileID: 6282252464188986948}
+  - component: {fileID: 6147204582961667672}
+  - component: {fileID: 1643698989579820974}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -84,7 +87,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 30
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 98fc1bb12b422e341b53428bbc9bb75c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -217,3 +220,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5976ddab0c4646b48946ad7fefa29e4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimation
+--- !u!114 &6282252464188986948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97519413084612204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a74156193bd4a545924a4dd180f5d6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DistanceCounter
+  distanceText: {fileID: 0}
+--- !u!114 &6147204582961667672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97519413084612204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948e33ce4ef192849ae30e798db2f91f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerGizmos
+--- !u!114 &1643698989579820974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97519413084612204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fd676f9e20685c4d8d13b4844c19c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlarmBehaviour
+  Alarm: {fileID: 0}
+  alarmSpriteRenderer: {fileID: 0}
