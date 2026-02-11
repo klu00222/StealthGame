@@ -50,7 +50,7 @@ AnimatorStateTransition:
   m_ExitTime: 0.42307693
   m_HasExitTime: 0
   m_HasFixedDuration: 1
-  m_InterruptionSource: 0
+  m_InterruptionSource: 1
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
 --- !u!91 &9100000
@@ -112,7 +112,7 @@ AnimatorStateTransition:
   m_ExitTime: 0.5833333
   m_HasExitTime: 0
   m_HasFixedDuration: 1
-  m_InterruptionSource: 0
+  m_InterruptionSource: 1
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
 --- !u!1102 &2720185067360513825
@@ -183,6 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce43fabc12822cd4ca8c9fe1a0e31b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChaseBehaviour
+  chaseSpeedMult: 3
 --- !u!114 &5413129566433415158
 MonoBehaviour:
   m_ObjectHideFlags: 1

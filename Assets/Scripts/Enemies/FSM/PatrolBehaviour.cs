@@ -40,7 +40,6 @@ public class PatrolBehaviour : StateMachineBehaviour
                 //Modulo wrapping (cycle through waypoints)
                 data.CurrentIndex = (data.CurrentIndex + 1) % data.Waypoints.Length;
             }
-
             return;
         }
 
@@ -51,7 +50,6 @@ public class PatrolBehaviour : StateMachineBehaviour
 
         //Rotation
         Vector2 moveDirection = ((Vector2)target.position - rb.position).normalized;
-
         if (moveDirection != Vector2.zero)
         {
             float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
