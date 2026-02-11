@@ -3,6 +3,7 @@ using UnityEngine;
 public class PatrolBehaviour : StateMachineBehaviour
 {
     private EnemyData data;
+    private Rigidbody2D rb;
 
     private static readonly int isPatrolling = Animator.StringToHash("isPatrolling");
     private static readonly int isChasing = Animator.StringToHash("isChasing");
@@ -10,6 +11,7 @@ public class PatrolBehaviour : StateMachineBehaviour
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         data = animator.GetComponent<EnemyData>();
+        rb = animator.GetComponent<Rigidbody2D>();
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -44,21 +46,23 @@ public class PatrolBehaviour : StateMachineBehaviour
 
         //Movement
         Transform target = data.Waypoints[data.CurrentIndex];
-        animator.transform.position = Vector2.MoveTowards(animator.transform.position, target.position, data.Speed * Time.deltaTime);
+        Vector2 newPosition = Vector2.MoveTowards(rb.position, target.position, data.Speed * Time.deltaTime);
+        rb.MovePosition(newPosition);
 
         //Rotation
-        Vector2 moveDirection = (target.position - animator.transform.position).normalized;
+        Vector2 moveDirection = ((Vector2)target.position - rb.position).normalized;
 
         if (moveDirection != Vector2.zero)
         {
             float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
-            Quaternion rotation = Quaternion.Euler(0, 0, angle);
+            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, angle, data.RotationSpeed * Time.deltaTime));
+            //Quaternion rotation = Quaternion.Euler(0, 0, angle);
 
-            animator.transform.rotation = Quaternion.Lerp(animator.transform.rotation, rotation, data.RotationSpeed * Time.deltaTime);
+            //animator.transform.rotation = Quaternion.Lerp(animator.transform.rotation, rotation, data.RotationSpeed * Time.deltaTime);
         }
 
         //Waypoint reached check
-        if (Vector2.Distance(animator.transform.position, target.position) < 0.1f)
+        if (Vector2.Distance(rb.position, target.position) < 0.1f)
         {
             data.IsWaiting = true;
         }
