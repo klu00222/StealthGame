@@ -8,16 +8,16 @@ public class VisionCone : MonoBehaviour
     private Material visionMaterial;
     [SerializeField]
     private int visionResolution = 30;
-    [SerializeField]
-    private float visionAngle;
-    [SerializeField]
-    private float detectionRange;
+
 
     private Mesh visionMesh;
     private MeshFilter meshFilter;
 
+    private EnemyData enemyData;
+
     private void Awake()
     {
+        enemyData = GetComponentInParent<EnemyData>();
         meshFilter = gameObject.AddComponent<MeshFilter>();
 
         MeshRenderer renderer = gameObject.AddComponent<MeshRenderer>();
@@ -45,8 +45,8 @@ public class VisionCone : MonoBehaviour
 
         vertices[0] = Vector3.zero;
 
-        float angleStep = visionAngle / visionResolution;
-        float startAngle = -visionAngle / 2f;
+        float angleStep = enemyData.visionAngle / visionResolution;
+        float startAngle = -enemyData.visionAngle / 2f;
 
         for (int i = 0; i <= visionResolution; i++)
         {
@@ -54,7 +54,7 @@ public class VisionCone : MonoBehaviour
 
             // LOCAL SPACE — DO NOT USE transform.right
             Vector3 dir = Quaternion.Euler(0f, 0f, angle) * Vector3.right;
-            vertices[i + 1] = dir * detectionRange;
+            vertices[i + 1] = dir * enemyData.detectionRange;
         }
 
         int triIndex = 0;

@@ -209,9 +209,6 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 512
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 256
   IsWaiting: 0
   Timer: 0
   CurrentIndex: 0
@@ -336,5 +333,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VisionCone
   visionMaterial: {fileID: 2100000, guid: 02d7ceac507e0364483b3c188ce2bfdf, type: 2}
   visionResolution: 30
-  visionAngle: 60
-  detectionRange: 3.5
