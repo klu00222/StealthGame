@@ -304,14 +304,11 @@ MonoBehaviour:
   WaitTime: 2
   Waypoints: []
   waypointsParent: {fileID: 0}
+  CurrentIndex: 0
   detectionRange: 4.46
   visionAngle: 60
   obstacleMask:
     serializedVersion: 2
     m_Bits: 512
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 256
   IsWaiting: 0
   Timer: 0
-  CurrentIndex: 0
