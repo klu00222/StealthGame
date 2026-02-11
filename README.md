@@ -10,7 +10,7 @@ A 2D game where the player must reach the end of a level avoiding the enemies' s
  - Hiding places to avoid detection
 
 ### Controls
-Keyboard:
+#### Keyboard:
  - Move: WASD or Arrow Keys
  - Escape: Quit game (at any point)
  - Enter: Start game (Title screen) or Restart game (Ending screen)
@@ -18,10 +18,12 @@ Keyboard:
 ### Screenshots
 ![GameStart](./Screenshots/Init.gif)
 
+
 ### Developers
  - Alexia Martínez - Programmer, Artist
  - Arnau Badenas - Programmer, Animator
  - Carla Pallés - Programmer, Animator
+
 
 ### License
 
