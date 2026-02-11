@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9c6fa8c3e3f9a394da44106f449680c4
+guid: 264f73e9b48ece54c8fbec046440c6dc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4941750568135635745
-    second: SlimePinkFront10_0
+      213: 393599936068506465
+    second: SlimePinkFront4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SlimePinkFront10_0
+      name: SlimePinkFront4_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1233f4e85ff949440800000000000000
-      internalID: 4941750568135635745
+      spriteID: 163daf47e09567500800000000000000
+      internalID: 393599936068506465
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SlimePinkFront10_0: 4941750568135635745
+      SlimePinkFront4_0: 393599936068506465
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

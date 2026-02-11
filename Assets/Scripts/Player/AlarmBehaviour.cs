@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class AlarmBehaviour : MonoBehaviour
 {
-    public GameObject alarm;
+    public GameObject Alarm;
     private SpriteRenderer alarmSpriteRenderer;
 
     public void Awake()
     {
-        alarmSpriteRenderer = alarm.GetComponent<SpriteRenderer>();
+        alarmSpriteRenderer = Alarm.GetComponent<SpriteRenderer>();
     }
 
     private void OnEnable()
@@ -22,7 +22,7 @@ public class AlarmBehaviour : MonoBehaviour
 
     private void ToggleIcon(bool seen)
     {
-        if (alarm != null)
+        if (Alarm != null)
         {
             alarmSpriteRenderer.enabled = seen;
         }

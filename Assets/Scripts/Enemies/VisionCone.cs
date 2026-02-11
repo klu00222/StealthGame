@@ -9,10 +9,8 @@ public class VisionCone : MonoBehaviour
     [SerializeField]
     private int visionResolution = 30;
 
-
     private Mesh visionMesh;
     private MeshFilter meshFilter;
-
     private EnemyData enemyData;
 
     private void Awake()

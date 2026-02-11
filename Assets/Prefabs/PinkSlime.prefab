@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 1084060215858525826}
   - component: {fileID: 8600758946975642167}
   m_Layer: 0
-  m_Name: SlimePink
+  m_Name: PinkSlime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

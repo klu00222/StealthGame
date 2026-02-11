@@ -7,7 +7,6 @@ public class EnemyData : MonoBehaviour
     [Header("Patrol Settings")]
     public float Speed = 2.0f;
     public float RotationSpeed = 10f;
-    public float WaitTime = 2.0f;
 
     public Transform[] Waypoints;
     public Transform WaypointsParent;
@@ -16,10 +15,12 @@ public class EnemyData : MonoBehaviour
     [Header("Detection")]
     public float DetectionRange = 3.5f;
     public float VisionAngle = 60.0f;
-    [SerializeField] private LayerMask obstacleMask;
+    [SerializeField]
+    private LayerMask obstacleMask;
 
     [Header("Wait Settings")]
     public bool IsWaiting = false;
+    public float WaitTime = 2.0f;
     public float Timer;
 
     private Transform player;
@@ -72,7 +73,7 @@ public class EnemyData : MonoBehaviour
         if (hit.collider != null)
         {
             UpdateDetectionState(false);
-            return false; //hit obstacle
+            return false; //Hit obstacle
         }
 
         UpdateDetectionState(true);

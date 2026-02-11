@@ -7,15 +7,15 @@ public class MusicManager : MonoBehaviour
 
     private void OnEnable()
     {
-        ChaseBehaviour.OnChasingChange += SetChaseMusic;
+        ChaseBehaviour.OnChasingChange += SetMusic;
     }
 
     private void OnDisable()
     {
-        ChaseBehaviour.OnChasingChange -= SetChaseMusic;
+        ChaseBehaviour.OnChasingChange -= SetMusic;
     }
 
-    private void SetChaseMusic(bool state)
+    private void SetMusic(bool state)
     {
         if (state)
         {

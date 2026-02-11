@@ -6593,7 +6593,7 @@ PrefabInstance:
     - target: {fileID: 4903963854431289736, guid: bcaaaadcdc84f864cb450b865b42bfa9,
         type: 3}
       propertyPath: m_Name
-      value: SlimePink
+      value: PinkSlime
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8411,27 +8411,13 @@ GameObject:
   - component: {fileID: 1227856876}
   - component: {fileID: 1227856875}
   - component: {fileID: 1227856874}
-  - component: {fileID: 1227856873}
   m_Layer: 5
-  m_Name: Counters
+  m_Name: CountersCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1227856873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227856872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a74156193bd4a545924a4dd180f5d6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  distanceText: {fileID: 0}
 --- !u!114 &1227856874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9401,7 +9387,7 @@ PrefabInstance:
     - target: {fileID: 4903963854431289736, guid: bcaaaadcdc84f864cb450b865b42bfa9,
         type: 3}
       propertyPath: m_Name
-      value: SlimePink
+      value: PinkSlime
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

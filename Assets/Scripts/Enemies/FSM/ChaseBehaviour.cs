@@ -10,8 +10,8 @@ public class ChaseBehaviour : StateMachineBehaviour
     [SerializeField]
     private float chaseSpeedMult = 3.0f;
 
-    private static readonly int IsChasingHash = Animator.StringToHash("isChasing");
-    private static readonly int IsPatrollingHash = Animator.StringToHash("isPatrolling");
+    private static readonly int isChasingHash = Animator.StringToHash("isChasing");
+    private static readonly int isPatrollingHash = Animator.StringToHash("isPatrolling");
 
     public static event Action<bool> OnChasingChange;
 
@@ -47,15 +47,14 @@ public class ChaseBehaviour : StateMachineBehaviour
 
         bool canSeePlayer = data.CanSeePlayer();
 
-        animator.SetBool(IsChasingHash, canSeePlayer);
-        animator.SetBool(IsPatrollingHash, !canSeePlayer);
+        animator.SetBool(isChasingHash, canSeePlayer);
+        animator.SetBool(isPatrollingHash, !canSeePlayer);
 
         if (canSeePlayer)
         {
             Vector2 currentPosition = rb.position;
             Vector2 targetPosition = player.position;
             Vector2 direction = (targetPosition - currentPosition).normalized;
-
 
             if (direction != Vector2.zero)
             {
