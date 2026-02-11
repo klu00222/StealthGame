@@ -201,7 +201,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   Speed: 2
   RotationSpeed: 10
-  WaitTime: 5
   Waypoints: []
   WaypointsParent: {fileID: 0}
   CurrentIndex: 0
@@ -210,8 +209,11 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 512
-  IsWaiting: 0
-  Timer: 0
+  PatrolIsWaiting: 0
+  PatrolWaitTime: 5
+  PatrolTimer: 0
+  ExposureWaitTime: 0.5
+  ExposureTimer: 0
 --- !u!114 &100486429726752773
 MonoBehaviour:
   m_ObjectHideFlags: 0

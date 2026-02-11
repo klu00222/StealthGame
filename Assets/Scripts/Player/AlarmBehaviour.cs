@@ -12,12 +12,12 @@ public class AlarmBehaviour : MonoBehaviour
 
     private void OnEnable()
     {
-        EnemyData.OnDetectionChanged += ToggleIcon;
+        ChaseBehaviour.OnChasingChange += ToggleIcon;
     }
 
     private void OnDisable()
     {
-        EnemyData.OnDetectionChanged -= ToggleIcon;
+        ChaseBehaviour.OnChasingChange -= ToggleIcon;
     }
 
     private void ToggleIcon(bool seen)

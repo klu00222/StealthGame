@@ -25,17 +25,18 @@ public class PatrolBehaviour : StateMachineBehaviour
         {
             animator.SetBool(isChasing, true);
             animator.SetBool(isPatrolling, false);
+
             return;
         }
 
-        if (data.IsWaiting)
+        if (data.PatrolIsWaiting)
         {
-            data.Timer += Time.deltaTime;
+            data.PatrolTimer += Time.deltaTime;
 
-            if (data.Timer >= data.WaitTime)
+            if (data.PatrolTimer >= data.PatrolWaitTime)
             {
-                data.Timer = 0;
-                data.IsWaiting = false;
+                data.PatrolTimer = 0;
+                data.PatrolIsWaiting = false;
 
                 //Modulo wrapping (cycle through waypoints)
                 data.CurrentIndex = (data.CurrentIndex + 1) % data.Waypoints.Length;
@@ -61,7 +62,7 @@ public class PatrolBehaviour : StateMachineBehaviour
         //Waypoint reached check
         if (Vector2.Distance(rb.position, target.position) < 0.3f)
         {
-            data.IsWaiting = true;
+            data.PatrolIsWaiting = true;
         }
     }
 }

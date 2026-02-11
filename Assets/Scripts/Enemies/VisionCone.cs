@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 public class VisionCone : MonoBehaviour
 {
     [Header("Vision Rendering")]

@@ -4,7 +4,7 @@ public class StaticBehaviour : StateMachineBehaviour
 {
     private EnemyData data;
 
-    // Static is the same as patrolling in this behaviour only it is in one place
+    //Static is the same as patrolling in this behaviour only it is in one place
     private static readonly int isPatrolling = Animator.StringToHash("isPatrolling");
     private static readonly int isChasing = Animator.StringToHash("isChasing");
 
@@ -16,7 +16,7 @@ public class StaticBehaviour : StateMachineBehaviour
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         data = animator.GetComponentInParent<EnemyData>();
-        data.IsWaiting = false;
+        data.PatrolIsWaiting = false;
 
         if (firstPos == Vector3.zero)
         {
@@ -47,20 +47,27 @@ public class StaticBehaviour : StateMachineBehaviour
 
         if (data.CanSeePlayer())
         {
-            animator.SetBool(isChasing, true);
-            animator.SetBool(isPatrolling, false);
+            data.ExposureTimer += Time.deltaTime;
 
-            return;
+            if (data.ExposureTimer >= data.ExposureWaitTime)
+            {
+                animator.SetBool(isChasing, true);
+                animator.SetBool(isPatrolling, false);
+            }
+        }
+        else
+        {
+            data.ExposureTimer = 0.0f;
         }
 
-        if (data.IsWaiting)
+        if (data.PatrolIsWaiting)
         {
-            data.Timer += Time.deltaTime;
+            data.PatrolTimer += Time.deltaTime;
 
-            if (data.Timer >= data.WaitTime)
+            if (data.PatrolTimer >= data.PatrolWaitTime)
             {
-                data.Timer = 0;
-                data.IsWaiting = false;
+                data.PatrolTimer = 0;
+                data.PatrolIsWaiting = false;
 
                 //Modulo wrapping (cycle through angles)
                 data.CurrentIndex = (data.CurrentIndex + 1) % angles.Length;
@@ -78,7 +85,7 @@ public class StaticBehaviour : StateMachineBehaviour
             if (Quaternion.Angle(animator.transform.rotation, targetRotation) < 1.0f)
             {
                 animator.transform.rotation = targetRotation;
-                data.IsWaiting = true;
+                data.PatrolIsWaiting = true;
             }
         }
     }

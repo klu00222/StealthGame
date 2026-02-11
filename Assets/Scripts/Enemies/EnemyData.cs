@@ -1,6 +1,4 @@
-﻿using System;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 public class EnemyData : MonoBehaviour
 {
@@ -19,14 +17,14 @@ public class EnemyData : MonoBehaviour
     private LayerMask obstacleMask;
 
     [Header("Wait Settings")]
-    public bool IsWaiting = false;
-    public float WaitTime = 2.0f;
-    public float Timer;
+    public bool PatrolIsWaiting = false;
+    public float PatrolWaitTime = 2.0f;
+    public float PatrolTimer;
+
+    public float ExposureWaitTime = 1.0f;
+    public float ExposureTimer;
 
     private Transform player;
-    private bool wasPlayerVisible;
-
-    public static event Action<bool> OnDetectionChanged;
 
     private void Awake()
     {
@@ -51,9 +49,9 @@ public class EnemyData : MonoBehaviour
 
         //Distance from player calculation
         float distance = Vector2.Distance(transform.position, player.position);
+
         if (distance > DetectionRange)
         {
-            UpdateDetectionState(false);
             return false;
         }
 
@@ -62,7 +60,6 @@ public class EnemyData : MonoBehaviour
 
         if (angleToPlayer > VisionAngle / 2f)
         {
-            UpdateDetectionState(false);
             return false;
         }
 
@@ -72,21 +69,10 @@ public class EnemyData : MonoBehaviour
 
         if (hit.collider != null)
         {
-            UpdateDetectionState(false);
             return false; //Hit obstacle
         }
 
-        UpdateDetectionState(true);
         return true;
-    }
-
-    private void UpdateDetectionState(bool isCurrentlyVisible)
-    {
-        if (isCurrentlyVisible != wasPlayerVisible)
-        {
-            wasPlayerVisible = isCurrentlyVisible;
-            OnDetectionChanged?.Invoke(isCurrentlyVisible);
-        }
     }
 
     private void OnDrawGizmos()
