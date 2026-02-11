@@ -8,13 +8,14 @@ public class EnemyData : MonoBehaviour
     public float Speed = 2.0f;
     public float RotationSpeed = 10f;
     public float WaitTime = 2.0f;
+
     public Transform[] Waypoints;
-    [SerializeField] private Transform waypointsParent;
+    public Transform WaypointsParent;
     public int CurrentIndex;
 
     [Header("Detection")]
-    public float detectionRange = 2.2f;
-    public float visionAngle = 45f;
+    public float DetectionRange = 3.5f;
+    public float VisionAngle = 60.0f;
     [SerializeField] private LayerMask obstacleMask;
 
     [Header("Wait Settings")]
@@ -30,12 +31,12 @@ public class EnemyData : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").transform;
 
-        if (waypointsParent != null)
+        if (WaypointsParent != null)
         {
-            Waypoints = new Transform[waypointsParent.childCount];
-            for (int i = 0; i < waypointsParent.childCount; i++)
+            Waypoints = new Transform[WaypointsParent.childCount];
+            for (int i = 0; i < WaypointsParent.childCount; i++)
             {
-                Waypoints[i] = waypointsParent.GetChild(i);
+                Waypoints[i] = WaypointsParent.GetChild(i);
             }
         }
     }
@@ -49,7 +50,7 @@ public class EnemyData : MonoBehaviour
 
         //Distance from player calculation
         float distance = Vector2.Distance(transform.position, player.position);
-        if (distance > detectionRange)
+        if (distance > DetectionRange)
         {
             UpdateDetectionState(false);
             return false;
@@ -58,7 +59,7 @@ public class EnemyData : MonoBehaviour
         Vector2 directionToPlayer = player.position - transform.position;
         float angleToPlayer = Vector2.Angle(transform.right, directionToPlayer);
 
-        if (angleToPlayer > visionAngle / 2f)
+        if (angleToPlayer > VisionAngle / 2f)
         {
             UpdateDetectionState(false);
             return false;
@@ -66,7 +67,7 @@ public class EnemyData : MonoBehaviour
 
         //Check if an object is in the way (can't see player)
         Vector2 rayStart = (Vector2)transform.position + (directionToPlayer.normalized * 0.5f);
-        RaycastHit2D hit = Physics2D.Raycast(rayStart, directionToPlayer, detectionRange, obstacleMask);
+        RaycastHit2D hit = Physics2D.Raycast(rayStart, directionToPlayer, DetectionRange, obstacleMask);
 
         if (hit.collider != null)
         {
@@ -89,14 +90,14 @@ public class EnemyData : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(transform.position, detectionRange);
+        Gizmos.DrawWireSphere(transform.position, DetectionRange);
 
         Gizmos.color = Color.red;
-        Vector3 direction = Quaternion.AngleAxis(visionAngle / 2, transform.forward) * transform.right;
-        Gizmos.DrawRay(transform.position, direction * detectionRange);
+        Vector3 direction = Quaternion.AngleAxis(VisionAngle / 2, transform.forward) * transform.right;
+        Gizmos.DrawRay(transform.position, direction * DetectionRange);
 
-        Vector3 direction2 = Quaternion.AngleAxis(-visionAngle / 2, transform.forward) * transform.right;
-        Gizmos.DrawRay(transform.position, direction2 * detectionRange);
+        Vector3 direction2 = Quaternion.AngleAxis(-VisionAngle / 2, transform.forward) * transform.right;
+        Gizmos.DrawRay(transform.position, direction2 * DetectionRange);
 
         Gizmos.color = Color.white;
     }

@@ -45,8 +45,8 @@ public class VisionCone : MonoBehaviour
 
         vertices[0] = Vector3.zero;
 
-        float angleStep = enemyData.visionAngle / visionResolution;
-        float startAngle = -enemyData.visionAngle / 2f;
+        float angleStep = enemyData.VisionAngle / visionResolution;
+        float startAngle = -enemyData.VisionAngle / 2f;
 
         for (int i = 0; i <= visionResolution; i++)
         {
@@ -54,7 +54,7 @@ public class VisionCone : MonoBehaviour
 
             // LOCAL SPACE — DO NOT USE transform.right
             Vector3 dir = Quaternion.Euler(0f, 0f, angle) * Vector3.right;
-            vertices[i + 1] = dir * enemyData.detectionRange;
+            vertices[i + 1] = dir * enemyData.DetectionRange;
         }
 
         int triIndex = 0;

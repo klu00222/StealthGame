@@ -782,7 +782,7 @@ TilemapRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -8338,7 +8338,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_TargetDisplay: 0
 --- !u!224 &1110979121
 RectTransform:
@@ -9042,7 +9042,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: d294a62d1d72d304f9985fbcdeb4129c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.75
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -9473,14 +9473,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2531367010124017549, guid: 5f85813695db0874b8168df01cbba630,
         type: 3}
+      propertyPath: VisionAngle
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2531367010124017549, guid: 5f85813695db0874b8168df01cbba630,
+        type: 3}
       propertyPath: visionAngle
       value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2531367010124017549, guid: 5f85813695db0874b8168df01cbba630,
+        type: 3}
+      propertyPath: DetectionRange
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 2531367010124017549, guid: 5f85813695db0874b8168df01cbba630,
         type: 3}
       propertyPath: detectionRange
       value: 4.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2531367010124017549, guid: 5f85813695db0874b8168df01cbba630,
+        type: 3}
+      propertyPath: WaypointsParent
+      value: 
+      objectReference: {fileID: 114414008}
     - target: {fileID: 2531367010124017549, guid: 5f85813695db0874b8168df01cbba630,
         type: 3}
       propertyPath: waypointsParent

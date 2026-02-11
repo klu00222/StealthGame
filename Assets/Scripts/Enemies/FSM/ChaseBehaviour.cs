@@ -7,7 +7,8 @@ public class ChaseBehaviour : StateMachineBehaviour
     private Transform player;
     private Rigidbody2D rb;
 
-    [SerializeField] private float chaseSpeedMult = 3.0f;
+    [SerializeField]
+    private float chaseSpeedMult = 3.0f;
 
     private static readonly int IsChasingHash = Animator.StringToHash("isChasing");
     private static readonly int IsPatrollingHash = Animator.StringToHash("isPatrolling");
