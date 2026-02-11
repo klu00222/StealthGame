@@ -297,14 +297,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf554cd62ed09a64aac7bb751f532d5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  Speed: 15
+  Speed: 2
   RotationSpeed: 10
   WaitTime: 2
   Waypoints: []
-  waypointsParent: {fileID: 0}
+  WaypointsParent: {fileID: 0}
   CurrentIndex: 0
-  detectionRange: 4.46
-  visionAngle: 60
+  DetectionRange: 4.5
+  VisionAngle: 75
   obstacleMask:
     serializedVersion: 2
     m_Bits: 512

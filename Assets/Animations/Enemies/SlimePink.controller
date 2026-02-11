@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce43fabc12822cd4ca8c9fe1a0e31b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChaseBehaviour
-  chaseSpeedMult: 3
+  chaseSpeedMult: 2
 --- !u!114 &5413129566433415158
 MonoBehaviour:
   m_ObjectHideFlags: 1
